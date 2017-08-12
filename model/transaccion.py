@@ -1,4 +1,5 @@
 import logging
+import time
 from model.usuario import usuario
 from db.connection import connection
 
@@ -11,8 +12,8 @@ logger = logging.getLogger(__name__)
 
 class transaccion:
     def __init__(self, id_transaccion: int = 0, numc_usuario_expedidor: int = 0, numc_usuario_remitente: int = 0,
-                 monto_transaccion: float = 0, fecha_inicio_transaccion=None, fecha_fin_transaccion=None,
-                 estado_transaccion: str = ''):
+                 monto_transaccion: int = 0, fecha_inicio_transaccion=time.strftime('%Y-%m-%d %H:%M:%S'), fecha_fin_transaccion=None,
+                 estado_transaccion: str = 'E'):
         self.id_transaccion = id_transaccion
         self.numc_usuario_expedidor = numc_usuario_expedidor
         self.numc_usuario_remitente = numc_usuario_remitente
@@ -32,9 +33,10 @@ class transaccion:
                     if us2.cargar_datos():
                         con = connection()
                         # Si la transaccion es E -> ESpera, A -> Aceptada, C -> Cancelada
+                        # Solo tomamos una posicion porque solo puede haber una transaccion en cola
                         output = con.execute(
                             "SELECT id_transaccion, numc_usuario_remitente, monto_transaccion, fecha_inicio_transaccion FROM Transacciones WHERE numc_usuario_expedidor = %s "
-                            "AND estado_transaccion = 'E'", [self.numc_usuario_expedidor]).fetchall()
+                            "AND estado_transaccion = 'E'", [self.numc_usuario_expedidor]).fetchall()[0]
 
                         if len(output) == 0:
                             saldo_disp = us1.saldo - self.monto_transaccion
@@ -50,23 +52,25 @@ class transaccion:
                                      self.fecha_inicio_transaccion],
                                     True).rowcount
                                 if rowcount > 0:
-                                    rowcount2 = con.execute("UPDATE Usuarios SET saldo = %s WHERE num_cuenta = %s",
-                                                            [saldo_disp, self.numc_usuario_expedidor], True).rowcount
-                                    if rowcount2 > 0:
-                                        output2 = con.execute(
-                                            "SELECT id_transaccion FROM Transacciones WHERE numc_usuario_expedidor = %s "
-                                            "AND estado_transaccion = 'E'", [self.numc_usuario_expedidor]).fetchall()
-                                        retorno = True
-                                        mensaje = output2[0]
-                                    else:
-                                        mensaje = "Algo salio mal al actualizar tu saldo :("
+                                    # Solo debe haber un dato
+                                    output2 = con.execute(
+                                        "SELECT id_transaccion FROM Transacciones WHERE numc_usuario_expedidor = %s "
+                                        "AND estado_transaccion = 'E'", [self.numc_usuario_expedidor]).fetchall()[0]
+                                    retorno = True
+                                    mensaje = output2[0]
+                                    logging.info("Transaccion en colada con exito a la espera de confirmación"
+                                                     "por el usuario %s", self.numc_usuario_expedidor)
+                                else:
+                                    logging.info("Transaccion fallida por el usuario %s",
+                                                    self.numc_usuario_expedidor)
+                                    mensaje = "Algo salio mal al actualizar tu saldo :("
 
                         else:
                             self.id_transaccion = output[0]
                             self.numc_usuario_remitente = output[1]
                             self.monto_transaccion = output[2]
                             self.fecha_inicio_transaccion = output[3]
-                            mensaje = "Usted tiene una transacción pendiente"
+                            mensaje = "Usted tiene una transacción pendiente - %s" % self.id_transaccion
                             logging.warning("Usuario %s tiene una transacción pendiente %s" % (
                             self.numc_usuario_expedidor, self.id_transaccion))
 
@@ -86,4 +90,22 @@ class transaccion:
         return (retorno, mensaje)
 
     def actualizar_transaccion(self):
+        '''
+        rowcount2 = con.execute("UPDATE Usuarios SET saldo = %s WHERE num_cuenta = %s",
+                                                            [saldo_disp, self.numc_usuario_expedidor], True).rowcount
+
+
+                                    if rowcount2 > 0:
+                                        # Solo debe haber un dato
+                                        output2 = con.execute(
+                                            "SELECT id_transaccion FROM Transacciones WHERE numc_usuario_expedidor = %s "
+                                            "AND estado_transaccion = 'E'", [self.numc_usuario_expedidor]).fetchall()[0]
+                                        retorno = True
+                                        mensaje = output2[0]
+        :return:
+        '''
         pass
+
+if __name__ == '__main__':
+    tra = transaccion(numc_usuario_expedidor=111111, numc_usuario_remitente=111112, monto_transaccion=100)
+    print(tra.realizar_transaccion())

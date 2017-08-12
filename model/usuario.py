@@ -24,16 +24,20 @@ class usuario:
         retorno = False
         if self.num_cuenta != 0:
             if self.verificar_usuario_registrado():
-                cursor = connection.execute("SELECT * FROM Usuarios WHERE num_cuenta = %s", [self.num_cuenta])
+                con = connection()
+                cursor = con.execute("SELECT * FROM Usuarios WHERE num_cuenta = %s", [self.num_cuenta])
                 if cursor != None:
-                    output = cursor.fetchall()
-                    for out in output:
-                        self.saldo = output[1]
-                        self.nombre = output[2]
-                        self.apellido = output[3]
-                        self.email = output[4]
-                        self.estado = output[5]
+                    # Porque solo nos retorna un usuario
+                    output = cursor.fetchall()[0]
+                    self.saldo = output[1]
+                    self.nombre = output[2]
+                    self.apellido = output[3]
+                    self.email = output[4]
+                    self.estado = output[5]
+                else:
+                    logging.error("Error interno al cargar datos del usuario")
                 retorno = True
+                con.close_connection()
                 logging.info("Usuario cargado con exito")
         else:
             logging.error("Usuario invalido, datos no iniciados correctamente")
@@ -104,4 +108,4 @@ if __name__ == '__main__':
     us = usuario(111111)
     print(us.verificar_usuario_registrado())
     us2 = usuario(111113, "sad", 500, "pepito perez")
-    print(us2.registrar())
+    us.cargar_datos()
