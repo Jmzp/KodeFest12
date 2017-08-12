@@ -12,4 +12,3 @@ class transaccion:
         self.fecha_fin_transaccion = fecha_fin_transaccion
         self.estado_transaccion = estado_transaccion
 
-    
