@@ -492,7 +492,12 @@ def help(bot, update):
                                        "/start - Iniciar bot y mostrar opciones\n"
                                        "/micuenta - Muestra los datos de tu cuenta\n"
                                        "/help - Te muestra los comandos a usar\n"
-                                       "/cancel - Cancelas la operación actual")
+                                       "/cancel - Cancelas la operación actual\n\n"
+                          "Las *operaciones* que puedes realizar son:\n\n"
+                                       "_Traslados_\n"
+                                       "_Retiros_\n"
+                                       "_Consignaciones_\n"
+                                       "_Obtener registro de movimientos en pdf_")
 
     show_options(bot, update)
     return OPCIONES
