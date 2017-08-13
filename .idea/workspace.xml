@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/usuario.py" afterPath="$PROJECT_DIR$/model/usuario.py" />
-    </list>
+    <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,8 +88,8 @@
       <file leaf-file-name="usuario.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/usuario.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+            <state relative-caret-position="34">
+              <caret line="119" column="36" lean-forward="true" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
                 <marker date="1502662067827" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
@@ -1357,8 +1355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/usuario.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+        <state relative-caret-position="34">
+          <caret line="119" column="36" lean-forward="true" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
             <marker date="1502662067827" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
