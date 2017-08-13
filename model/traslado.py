@@ -59,7 +59,7 @@ class traslado:
                                     retorno = True
                                     mensaje = output2[0]
                                     logging.info("Traslado en cola con exito a la espera de confirmación"
-                                                     "por el usuario %s", self.numc_usuario_expedidor)
+                                                     " por el usuario %s", self.numc_usuario_expedidor)
                                 else:
                                     logging.info("Traslado fallida por el usuario %s",
                                                     self.numc_usuario_expedidor)

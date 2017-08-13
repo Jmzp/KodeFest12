@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/tools.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/model/transaccion.py" afterPath="$PROJECT_DIR$/model/traslado.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boot.py" afterPath="$PROJECT_DIR$/boot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/connection_template.py" afterPath="$PROJECT_DIR$/db/connection_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/config_template.ini" afterPath="$PROJECT_DIR$/etc/config_template.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/usuario.py" afterPath="$PROJECT_DIR$/model/usuario.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/traslado.py" afterPath="$PROJECT_DIR$/model/traslado.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +17,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/KodeFest12$connection.coverage" NAME="connection Coverage Results" MODIFIED="1502568143613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
-    <SUITE FILE_PATH="coverage/KodeFest12$boot.coverage" NAME="boot Coverage Results" MODIFIED="1502585558752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KodeFest12$boot.coverage" NAME="boot Coverage Results" MODIFIED="1502586751094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/KodeFest12$usuario.coverage" NAME="usuario Coverage Results" MODIFIED="1502569636654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/KodeFest12$transaccion.coverage" NAME="transaccion Coverage Results" MODIFIED="1502581989861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
   </component>
@@ -59,8 +56,8 @@
       <file leaf-file-name="boot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/boot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3007">
-              <caret line="247" column="23" lean-forward="false" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+            <state relative-caret-position="527">
+              <caret line="340" column="31" lean-forward="true" selection-start-line="340" selection-start-column="31" selection-end-line="340" selection-end-column="31" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -71,7 +68,7 @@
       <file leaf-file-name="usuario.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/usuario.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="595">
               <caret line="124" column="50" lean-forward="true" selection-start-line="124" selection-start-column="50" selection-end-line="124" selection-end-column="50" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -92,19 +89,19 @@
       <file leaf-file-name="traslado.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/traslado.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="124" column="79" lean-forward="false" selection-start-line="124" selection-start-column="79" selection-end-line="124" selection-end-column="79" />
+            <state relative-caret-position="714">
+              <caret line="75" column="74" lean-forward="false" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1502585330436" expanded="true" signature="1687:1873" ph="SELECT id_tr... Traslados" />
-                <marker date="1502585330436" expanded="true" signature="2491:2660" ph="INSERT INTO Traslados... " />
-                <marker date="1502585330436" expanded="true" signature="3106:3242" ph="SELECT id_tr... Traslados" />
-                <marker date="1502585330436" expanded="true" signature="5374:5420" ph="SELECT * FRO... Traslados" />
-                <marker date="1502585330436" expanded="true" signature="5374:5441" ph="SELECT * FRO... Traslados" />
-                <marker date="1502585330436" expanded="true" signature="5792:5882" ph="UPDATE Trasl... " />
-                <marker date="1502585330436" expanded="true" signature="5858:5882" ph="SELECT id_tr... Traslados" />
-                <marker date="1502585330436" expanded="true" signature="6349:6401" ph="UPDATE Usuar... " />
-                <marker date="1502585330436" expanded="true" signature="6609:6661" ph="UPDATE Usuar... " />
+                <marker date="1502586030140" expanded="true" signature="1687:1873" ph="SELECT id_tr... Traslados" />
+                <marker date="1502586030140" expanded="true" signature="2491:2660" ph="INSERT INTO Traslados... " />
+                <marker date="1502586030140" expanded="true" signature="3106:3242" ph="SELECT id_tr... Traslados" />
+                <marker date="1502586030140" expanded="true" signature="5375:5421" ph="SELECT * FRO... Traslados" />
+                <marker date="1502586030140" expanded="true" signature="5375:5442" ph="SELECT * FRO... Traslados" />
+                <marker date="1502586030140" expanded="true" signature="5793:5883" ph="UPDATE Trasl... " />
+                <marker date="1502586030140" expanded="true" signature="5859:5883" ph="SELECT id_tr... Traslados" />
+                <marker date="1502586030140" expanded="true" signature="6350:6402" ph="UPDATE Usuar... " />
+                <marker date="1502586030140" expanded="true" signature="6610:6662" ph="UPDATE Usuar... " />
               </folding>
             </state>
           </provider>
@@ -590,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502570533129</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Traslados terminados">
+      <created>1502585804010</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1502585804010</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -628,7 +632,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Transacción parcialmente terminada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Transacción parcialmente terminada" />
+    <MESSAGE value="Traslados terminados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Traslados terminados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -678,15 +683,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1502585330436" expanded="true" signature="1687:1873" ph="SELECT id_tr... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="2491:2660" ph="INSERT INTO Traslados... " />
-            <marker date="1502585330436" expanded="true" signature="3106:3242" ph="SELECT id_tr... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="5374:5420" ph="SELECT * FRO... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="5374:5441" ph="SELECT * FRO... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="5792:5882" ph="UPDATE Trasl... " />
-            <marker date="1502585330436" expanded="true" signature="5858:5882" ph="SELECT id_tr... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="6349:6401" ph="UPDATE Usuar... " />
-            <marker date="1502585330436" expanded="true" signature="6609:6661" ph="UPDATE Usuar... " />
+            <marker date="1502586030140" expanded="true" signature="1687:1873" ph="SELECT id_tr... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="2491:2660" ph="INSERT INTO Traslados... " />
+            <marker date="1502586030140" expanded="true" signature="3106:3242" ph="SELECT id_tr... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="5375:5421" ph="SELECT * FRO... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="5375:5442" ph="SELECT * FRO... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="5793:5883" ph="UPDATE Trasl... " />
+            <marker date="1502586030140" expanded="true" signature="5859:5883" ph="SELECT id_tr... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="6350:6402" ph="UPDATE Usuar... " />
+            <marker date="1502586030140" expanded="true" signature="6610:6662" ph="UPDATE Usuar... " />
           </folding>
         </state>
       </provider>
@@ -817,28 +822,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/traslado.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="124" column="79" lean-forward="false" selection-start-line="124" selection-start-column="79" selection-end-line="124" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1502585330436" expanded="true" signature="1687:1873" ph="SELECT id_tr... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="2491:2660" ph="INSERT INTO Traslados... " />
-            <marker date="1502585330436" expanded="true" signature="3106:3242" ph="SELECT id_tr... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="5374:5420" ph="SELECT * FRO... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="5374:5441" ph="SELECT * FRO... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="5792:5882" ph="UPDATE Trasl... " />
-            <marker date="1502585330436" expanded="true" signature="5858:5882" ph="SELECT id_tr... Traslados" />
-            <marker date="1502585330436" expanded="true" signature="6349:6401" ph="UPDATE Usuar... " />
-            <marker date="1502585330436" expanded="true" signature="6609:6661" ph="UPDATE Usuar... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/usuario.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="595">
           <caret line="124" column="50" lean-forward="true" selection-start-line="124" selection-start-column="50" selection-end-line="124" selection-end-column="50" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -855,10 +841,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model/traslado.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="75" column="74" lean-forward="false" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1502586030140" expanded="true" signature="1687:1873" ph="SELECT id_tr... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="2491:2660" ph="INSERT INTO Traslados... " />
+            <marker date="1502586030140" expanded="true" signature="3106:3242" ph="SELECT id_tr... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="5375:5421" ph="SELECT * FRO... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="5375:5442" ph="SELECT * FRO... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="5793:5883" ph="UPDATE Trasl... " />
+            <marker date="1502586030140" expanded="true" signature="5859:5883" ph="SELECT id_tr... Traslados" />
+            <marker date="1502586030140" expanded="true" signature="6350:6402" ph="UPDATE Usuar... " />
+            <marker date="1502586030140" expanded="true" signature="6610:6662" ph="UPDATE Usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/boot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3007">
-          <caret line="247" column="23" lean-forward="false" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+        <state relative-caret-position="527">
+          <caret line="340" column="31" lean-forward="true" selection-start-line="340" selection-start-column="31" selection-end-line="340" selection-end-column="31" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
