@@ -116,7 +116,8 @@ class usuario:
             "AND estado_traslado = 'E'", [self.num_cuenta])
         if cursor != None:
             output = cursor.fetchall()
-            if len(output) >= 1:
+            if len(output) == 1:
+                output = output[0]
                 retorno = True
                 id_traslado = output[0][0]
                 logging.info(
@@ -127,6 +128,29 @@ class usuario:
             logging.error("Error interno al verificar Traslado")
         con.close_connection()
         return (retorno,id_traslado)
+
+    def verificar_retiro_espera(self):
+        retorno = False
+        id_retiro = 0
+        con = connection()
+        cursor = con.execute(
+            "SELECT id_retiro FROM Retiros WHERE numc_usuario = %s "
+            "AND estado_retiro = 'E'", [self.num_cuenta])
+        if cursor != None:
+            output = cursor.fetchall()
+            if len(output) == 1:
+                output = output[0]
+                retorno = True
+                id_retiro = output[0]
+                logging.info(
+                    "Retiro %s en espera" % (output[0]))
+            else:
+                logging.warning("No existen Retiros en espera de confirmación")
+        else:
+            logging.error("Error interno al verificar Retiro")
+        con.close_connection()
+        return (retorno, id_retiro)
+
 
 
 if __name__ == '__main__':

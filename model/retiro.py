@@ -113,8 +113,11 @@ class retiro:
                             retorno = True
                             mensaje = 'Retiro aceptado'
                             logging.info("Retiro aceptado")
+                    else:
+                        mensaje = "Retiro cancelado"
+                        logging.info("Retiro %s cancelado", self.id_retiro)
                 else:
-                    mensaje = 'Código de Retiro erróneo'
+                    mensaje = 'Código de Traslado erróneo\nPor favor ingrese el código correcto'
                     logging.info("Código de Retiro erróneo")
             con.close_connection()
         else:

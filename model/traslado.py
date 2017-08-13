@@ -125,9 +125,13 @@ class traslado:
                                                 [saldo_disp_us2, us2.num_cuenta], True).rowcount
                         if rowcount2 == 1 and rowcount3 == 1:
                             retorno = True
+                            mensaje = "%s-%s" % (us2.email, monto)
                             logging.info("Traslado aceptado")
+                    else:
+                        mensaje = "Traslado cancelado"
+                        logging.info("Traslado %s cancelado", self.id_traslado)
                 else:
-                    mensaje = 'Código de Traslado erróneo'
+                    mensaje = 'Código de Traslado erróneo\nPor favor ingrese el código correcto'
                     logging.info("Código de Traslado erróneo")
             con.close_connection()
         else:

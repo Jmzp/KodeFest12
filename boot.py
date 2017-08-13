@@ -9,6 +9,7 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
                           ConversationHandler)
 from model.usuario import usuario
 from model.traslado import traslado
+from model.retiro import retiro
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -22,7 +23,7 @@ config = configparser.ConfigParser()
 config.read("etc/config.ini")
 
 
-REGISTRO_P1, REGISTRO_P2, OPCIONES, TRASLADO, RETIRO, PRESTAMO, CONFIRMACION_TRASLADO= range(7)
+REGISTRO_P1, REGISTRO_P2, OPCIONES, TRASLADO, RETIRO, PRESTAMO, CONFIRMACION_TRASLADO, CONFIRMACION_RETIRO= range(8)
 TOKEN = config['KEYS']['bot_api']
 
 def start(bot, update):
@@ -50,7 +51,7 @@ def start(bot, update):
 
     return retorno
 
-
+# REGISTRO  NUEVO USUARIO
 def registro_p1(bot, update):
     respuesta = update.message.text
     user = update.message.from_user  # para obtener los datos del usuario
@@ -80,15 +81,15 @@ def registro_p2(bot, update):
     registrado = us.registrar()
     if registrado:
 
-        msg2 = "Tus Datos\n" \
-               "Nombre de usuario : %s \n" \
-               "Número de Cuenta : %s \n" \
-               "Saldo : $500\n" \
-               "Email : %s" % (user.name, user.id, email)
+        msg2 = "<b>Tus Datos</b>\n" \
+               "<b>Nombre de usuario</b> : %s \n" \
+               "<b>Número de Cuenta</b> : %s \n" \
+               "<b>Saldo</b> : $500\n" \
+               "<b>Email</b> : %s" % (user.name, user.id, email)
 
         typing(bot, update)
         status = tools.send_email(config['SMTP']['email'],config['SMTP']['password'], email,
-                         "Bienvenido a MiBanco", "Nos Alegra que hagas parte de este KodeFest t.me/MiBanco_bot \n\n\n%s" %msg2, False)
+                         "Bienvenido a MiBanco", "Nos Alegra que hagas parte de este KodeFest t.me/MiBanco_bot \n\n\n%s" %msg2, True)
 
         if status:
             update.message.reply_text("Te hemos enviado un Email con la información registrada")
@@ -110,44 +111,26 @@ def registro_p2(bot, update):
 
     return retorno
 
-
-
-def registro_incorrecto_p1(bot, update):
-    user = update.message.from_user
-
-    msg = "%s recuerda responder *S* o *s* en caso afirmativo, *N* o *n* en caso negativo" % user.first_name
-    send_message_MARKDOWN(bot,update, msg)
-
-    logging.info("Usuario %s en registro_incorrecto_p1" % user.name)
-
-    return REGISTRO_P1
-
-def registro_incorrecto_p2(bot, update):
-    user = update.message.from_user
-
-    update.message.reply_text("%s has ingresado una direccion de correo invalida" %user.first_name)
-    logging.info("Usuario %s en registro_incorrecto_p2" % user.name)
-
-    return REGISTRO_P2
-
-
+# OPCIONES PARA USUARIO REGISTRADO
 def opciones(bot, update):
-    retorno = TRASLADO
+    retorno = OPCIONES
     user = update.message.from_user
     op = update.message.text
 
     if op == 'Traslado':
+        retorno = TRASLADO
         typing(bot,update)
         us = usuario(user.id)
         us.cargar_datos()
         resultado = us.verificar_traslado_espera()
+        #Si tiene un traslado en espera
         if resultado[0]:
             typing(bot, update)
             status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], us.email,
                                       "Confirmación de Traslado",
                                       "El <bold>Código</bold> de Traslado es : %s" % resultado[1],
                                       True)
-            retorno = CONFIRMACION_TRASLADO
+
             if status:
                 send_message_MARKDOWN(bot, update, "Usted tiene un traslado en espera\n\n"
                                                    "Verifique su Email e ingrese el código de verificación del traslado\n"
@@ -159,22 +142,50 @@ def opciones(bot, update):
                 send_message_MARKDOWN(bot, update, "Lo sentimos no pudimos enviar el Email a %s.\n" \
                                                    "Su *Código* de Traslado es : %s" % (us.email, resultado[1]))
 
+            retorno = CONFIRMACION_TRASLADO
 
         else:
             update.message.reply_text("Por favor ingrese el número de cuenta a la que desea realizarle el traslado y el monto del mismo.\n"
                                   "Ejemplo : 78128456 - 50")
     if op == 'Retiro':
-        update.message.reply_text("Por favor escriba la cantidad de dinero a retirar")
+        retorno = RETIRO
+        typing(bot, update)
+        us = usuario(user.id)
+        us.cargar_datos()
+        resultado = us.verificar_retiro_espera()
+        #Si tiene un retiro en espera
+        if resultado[0]:
+            typing(bot, update)
+            status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], us.email,
+                                      "Confirmación de Retiro",
+                                      "El <b>Código</b> de confirmación de Retiro es : %s" % resultado[1],
+                                      True)
+
+            if status:
+                send_message_MARKDOWN(bot, update, "Usted tiene un Retiro en espera\n\n"
+                                                   "Verifique su Email e ingrese el código de verificación del Retiro\n"
+                                                   "seguido de *A* -> Aceptar ó \n"
+                                                   "*C* -> Cancelar\n"
+                                                   "Ejemplo : 1111 - A")
+
+            else:
+                send_message_MARKDOWN(bot, update, "Lo sentimos no pudimos enviar el Email a %s.\n" \
+                                                   "Su *Código* de confirmación de Retiro es : %s" % (us.email, resultado[1]))
+
+            retorno = CONFIRMACION_RETIRO
+        else:
+            update.message.reply_text("Por favor escriba la cantidad de dinero a retirar")
+
 
 
     if op == 'Préstamo':
         update.message.reply_text("p")
 
-
     logging.info("Usuario %s en opciones" % user.name)
 
     return retorno
 
+# TRASLADOS
 def traslados(bot, update):
     retorno = OPCIONES
     user = update.message.from_user
@@ -200,7 +211,7 @@ def traslados(bot, update):
             typing(bot, update)
             status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], us.email,
                                       "Confirmación de Traslado",
-                                      "El <bold>Código</bold> de Traslado es : %s" % tras_result[1],
+                                      "El <b>Código</b> de confirmación de Traslado es : %s" % tras_result[1],
                                       True)
             if status:
                 send_message_MARKDOWN(bot,update,"Verifique su Email e ingrese el código de verificación del traslado\n"
@@ -239,20 +250,131 @@ def confirmacion_traslado(bot, update):
     resultado = tras.actualizar_traslado(estado_traslado)
 
     if resultado[0]:
-        update.message.reply_text("Traslado realizado con éxito")
+        typing(bot,update)
+        # Envío de email de notificacion al usuario receptor del traslado
+        resultado2 = resultado[1].split("-")
+        typing(bot, update)
+        status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], resultado2[0],
+                                  "Usted ha recibido un Traslado de Dinero",
+                                  "El monto recibido es : %s" % resultado2[1],
+                                  True)
+        if status:
+            update.message.reply_text("Email de notifiación de Traslado enviado")
+        typing(bot, update)
+        us = usuario(user.id)
+        us.cargar_datos()
+        send_message_MARKDOWN(bot, update, "Traslado realizado con éxito\n"
+                                           "*Tú nuevo saldo es de* : %s" % us.saldo)
+
         show_options(bot,update)
     else:
-        update.message.reply_text("Código de traslado erróneo \n"
-                                  "Por favor ingrese el código correcto")
-        retorno = CONFIRMACION_TRASLADO
+        update.message.reply_text(resultado[1])
+        if estado_traslado in ('C','c'):
+            show_options(bot,update)
+        else:
+            retorno = CONFIRMACION_TRASLADO
     return retorno
 
 
-def retiro(bot, update):
-    pass
+# RETIROS
+def retiros(bot, update):
+    retorno = OPCIONES
+    user = update.message.from_user
+    monto_retirar = int(update.message.text)
+
+    us = usuario(num_cuenta= user.id)
+    typing(bot, update)
+    us.cargar_datos()
+
+    typing(bot, update)
+    #Se crea el retiro
+    reti = retiro(numc_usuario= us.num_cuenta, monto_retiro=monto_retirar)
+    typing(bot, update)
+
+    retiro_result = reti.realizar_retiro()
+
+    if retiro_result[0]:
+        typing(bot, update)
+        status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], us.email,
+                                  "Confirmación de Retiro",
+                                  "El <b>Código</b> de confirmación de Retiro es : %s" % retiro_result[1],
+                                  True)
+        if status:
+            send_message_MARKDOWN(bot, update, "Verifique su Email e ingrese el código de verificación del Retiro\n"
+                                               "seguido de *A* -> Aceptar ó \n"
+                                               "*C* -> Cancelar\n"
+                                               "Ejemplo : 1111 - A")
+        else:
+            send_message_MARKDOWN(bot, update, "Lo sentimos no pudimos enviar el Email a %s.\n" \
+                                               "Su *Código* de Retiro es : %s" % (us.email, retiro_result[1]))
+
+        retorno = CONFIRMACION_RETIRO
+
+    else:
+        logging.info("Usuario sin fondos")
+        send_message_MARKDOWN(bot, update, "Lo sentimos no se pudo realizar el Retiro razón : %s" % retiro_result[1])
+
+    return retorno
+
+def confirmacion_retiro(bot, update):
+    user = update.message.from_user
+
+    logging.info('Usuario %s confirmando el retiro', user.name)
+
+    retorno = OPCIONES
+
+    codigo, estado_retiro = update.message.text.replace(" ", "").split("-")
+
+    ret = retiro(id_retiro= codigo)
+
+    typing(bot, update)
+    resultado = ret.actualizar_retiro(estado_retiro)
+
+    if resultado[0]:
+        typing(bot, update)
+        us = usuario(user.id)
+        us.cargar_datos()
+
+        send_message_MARKDOWN(bot,update,"Retiro realizado con éxito\n"
+                                  "*Tú nuevo saldo es de* : %s" % us.saldo)
+        show_options(bot, update)
+    else:
+        update.message.reply_text(resultado[1])
+        if estado_retiro == 'C':
+            show_options(bot, update)
+        else:
+            retorno = CONFIRMACION_RETIRO
+    return retorno
 
 
+# ERRORES EN INGRESO DE DATOS
+def registro_incorrecto_p1(bot, update):
+    user = update.message.from_user
 
+    msg = "%s recuerda responder *S* o *s* en caso afirmativo, *N* o *n* en caso negativo" % user.first_name
+    send_message_MARKDOWN(bot,update, msg)
+
+    logging.info("Usuario %s en registro_incorrecto_p1" % user.name)
+
+    return REGISTRO_P1
+
+def registro_incorrecto_p2(bot, update):
+    user = update.message.from_user
+
+    update.message.reply_text("%s has ingresado una direccion de correo invalida" %user.first_name)
+    logging.info("Usuario %s en registro_incorrecto_p2" % user.name)
+
+    return REGISTRO_P2
+
+def retiro_incorrecto(bot, update):
+    user = update.message.from_user
+
+    update.message.reply_text("%s has ingresado una cantidad inválida" % user.first_name)
+    logging.info("Usuario %s en retiro_incorrecto" % user.name)
+
+    return RETIRO
+
+# OTROS COMANDOS
 def micuenta(bot, update):
     typing(bot, update)
     user = update.message.from_user
@@ -267,6 +389,7 @@ def micuenta(bot, update):
               "*Saldo* : %s\n" \
               "*Email* : %s" % (us.nombre + " " + us.apellido, us.num_cuenta, us.saldo, us.email)
         send_message_MARKDOWN(bot, update, msg)
+        logging.info("Mi cuenta cargada del usuario %s cargados con exito ", user.id)
     else:
         msg ="Lo siento, *no estás registrado*"
         send_message_MARKDOWN(bot, update, msg)
@@ -275,27 +398,31 @@ def micuenta(bot, update):
     return OPCIONES
 
 
+def help(bot, update):
+    send_message_MARKDOWN(bot, update, "Con *MiBanco* puedes crear una cuenta y así realizar traslados, retiros, y mucho más. "
+                          "Además no te preocupes MiBanco te avisará cada vez que realices un traslado o retiro vía Email "
+                          "para que lo confirmes o canceles.\n\n"
+                          "Los comandos son los siguientes:\n\n"
+                                       "/start - Iniciar bot y mostrar opciones\n"
+                                       "/micuenta - Muestra los datos de tu cuenta\n"
+                                       "/help - Te muestra los comandos a usar\n"
+                                       "/cancel - Cancelas la operación actual")
 
-def error(bot, update : update, error):
-    logger.warning('Update "%s" causo el error "%s"' % (update, error))
+    show_options(bot, update)
+    return OPCIONES
+
+
 
 def cancelar(bot, update: update):
-    '''user = update.message.from_user
-    logger.info("Usuario %s cancelo la conversación." % user.first_name)
-    # Removemos el teclado personalizado y mostramos el normal
-
-    bot.sendChatAction(chat_id=update.message.chat_id,
-                       action=ChatAction.TYPING)
-    time.sleep(1)
-
-    update.message.reply_text('Hasta luego %s :)' % user.first_name,
-                              reply_markup=ReplyKeyboardRemove())'''
+    user = update.message.from_user
+    update.message.reply_text('Hasta luego %s :)' % user.first_name)
 
     return ConversationHandler.END
 
 
+# OTRAS FUNCIONES
 def show_options(bot, update):
-    keyboard = [['Traslado', 'Retiro'], ['Préstamo', "/micuenta"]]
+    keyboard = [['Traslado', 'Retiro','Préstamo'], ["/start"],[ "/micuenta","/help","/cancel"]]
 
     reply_markup = ReplyKeyboardMarkup(keyboard)
 
@@ -312,6 +439,10 @@ def typing(bot, update):
     bot.sendChatAction(chat_id=update.message.chat_id,
                        action=ChatAction.TYPING)
 
+def error(bot, update : update, error):
+    logger.warning('Update "%s" causo el error "%s"' % (update, error))
+
+
 def main():
 
     updater = Updater(TOKEN)
@@ -324,23 +455,25 @@ def main():
         entry_points=[CommandHandler('start', start)],
 
         states={
-            REGISTRO_P1: [RegexHandler('^(S|N|s|n)$', registro_p1),  RegexHandler('^.*?$', registro_incorrecto_p1)],
+            REGISTRO_P1: [RegexHandler('^(S|N|s|n)$', registro_p1),  MessageHandler(Filters.text, registro_incorrecto_p1)],
             #MessageHandler.filters(Filters.text)
             REGISTRO_P2: [RegexHandler('^[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', registro_p2),
-                          RegexHandler('^.*?$', registro_incorrecto_p2)],
+                          MessageHandler(Filters.text,registro_incorrecto_p2)],
 
-            OPCIONES: [RegexHandler('^(Traslado|Retiro|Préstamo)$', opciones)],
+            OPCIONES: [RegexHandler('^(Traslado|Retiro|Préstamo)$', opciones), MessageHandler(Filters.text,opciones_incorrecto)],
 
-            TRASLADO: [RegexHandler('^\d+\s?\-\s?\d+$', traslados)],
+            TRASLADO: [RegexHandler('^\d+\s?\-\s?\d+$', traslados), MessageHandler(Filters.text,traslado_incorrecto_)],#PENDIENTE
 
-            CONFIRMACION_TRASLADO: [RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_traslado)],
+            CONFIRMACION_TRASLADO: [RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_traslado), MessageHandler(Filters.text,confirmacionT_incorrecto)],
 
-            RETIRO:[RegexHandler('^\d+$', retiro)]
+            RETIRO:[RegexHandler('^\d+$', retiros), MessageHandler(Filters.text,retiro_incorrecto)],
+
+            CONFIRMACION_RETIRO: [RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_retiro),MessageHandler(Filters.text,confirmacionR_incorrecto)]
 
         },
 
 
-        fallbacks=[CommandHandler('cancel', cancelar), CommandHandler("micuenta", micuenta)]
+        fallbacks=[CommandHandler('cancel', cancelar), CommandHandler("micuenta", micuenta), CommandHandler("help", help)]
     )
 
     dp.add_handler(conv_handler)
@@ -349,14 +482,14 @@ def main():
     dp.add_error_handler(error)
 
     # Iniciamos el bot
-    #updater.start_polling()
+    updater.start_polling()
 
-    PORT = int(os.environ.get('PORT', '5000'))
-    updater.start_webhook(listen="0.0.0.0",
-                          port=PORT,
-                          url_path=TOKEN)
+    #PORT = int(os.environ.get('PORT', '5000'))
+    #updater.start_webhook(listen="0.0.0.0",
+    #                      port=PORT,
+    #                      url_path=TOKEN)
 
-    updater.bot.set_webhook("https://kodefest12.herokuapp.com/" + TOKEN)
+    #updater.bot.set_webhook("https://kodefest12.herokuapp.com/" + TOKEN)
 
     updater.idle()
 
