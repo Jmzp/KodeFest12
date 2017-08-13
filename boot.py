@@ -89,12 +89,12 @@ def registro_p2(bot, update):
                               "Estamos procesando tus datos</br>"
                               "Si todo sale bien recibirás un Email confirmando tu registro", True)
 
-    time.sleep(3)
+    time.sleep(1)
     if status:
         typing(bot, update)
         registrado = us.registrar()
         if registrado:
-            update.message.reply_text("Te hemos enviado un Email confirmandote los datos")
+            update.message.reply_text("Te hemos enviado un Email para verificar si el Email ingresado es válido")
             msg = "*Tus Datos*\n" \
                   "*Nombre de usuario* : %s \n" \
                   "*Número de Cuenta* : %s \n" \
