@@ -138,7 +138,7 @@ def opciones(bot, update):
             typing(bot, update)
             status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], us.email,
                                       "Confirmación de Traslado",
-                                      "El <bold>Código</bold> de Traslado es : %s" % resultado[1],
+                                      "El <b>Código</b> de Traslado es : %s" % resultado[1],
                                       True)
 
             if status:
