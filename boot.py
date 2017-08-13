@@ -494,10 +494,10 @@ def help(bot, update):
                                        "/help - Te muestra los comandos a usar\n"
                                        "/cancel - Cancelas la operación actual\n\n"
                           "Las *operaciones* que puedes realizar son:\n\n"
-                                       "_Traslados_\n"
-                                       "_Retiros_\n"
-                                       "_Consignaciones_\n"
-                                       "_Obtener registro de movimientos en pdf_")
+                                       "- Traslados\n"
+                                       "- Retiros\n"
+                                       "- Consignaciones\n"
+                                       "- Obtener registro de movimientos en pdf")
 
     show_options(bot, update)
     return OPCIONES

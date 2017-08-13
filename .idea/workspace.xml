@@ -79,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/boot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="499" column="80" lean-forward="false" selection-start-line="499" selection-start-column="80" selection-end-line="499" selection-end-column="80" />
+              <caret line="499" column="42" lean-forward="false" selection-start-line="499" selection-start-column="42" selection-end-line="499" selection-end-column="42" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -1373,7 +1373,7 @@
     <entry file="file://$PROJECT_DIR$/boot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="499" column="80" lean-forward="false" selection-start-line="499" selection-start-column="80" selection-end-line="499" selection-end-column="80" />
+          <caret line="499" column="42" lean-forward="false" selection-start-line="499" selection-start-column="42" selection-end-line="499" selection-end-column="42" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
