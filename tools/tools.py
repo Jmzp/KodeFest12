@@ -1,5 +1,6 @@
 import smtplib
 import logging
+from weasyprint import HTML
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -55,3 +56,6 @@ def send_email(correo_from_send: str, password: str, correo_to_send: str, asunto
         logging.error("\nOcurrio un error al tratar crear el cliente SMTP : %s " % err)
 
     return status
+
+def createPDF(strHTML, namePDF):
+    HTML(string=strHTML).write_pdf('res/%s.pdf' % namePDF)

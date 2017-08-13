@@ -10,6 +10,11 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
 from model.usuario import usuario
 from model.traslado import traslado
 from model.retiro import retiro
+from model.consignacion import consignacion
+
+
+os.environ['TZ'] = 'America/Bogota'
+time.tzset()
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -23,7 +28,7 @@ config = configparser.ConfigParser()
 config.read("etc/config.ini")
 
 
-REGISTRO_P1, REGISTRO_P2, OPCIONES, TRASLADO, RETIRO, PRESTAMO, CONFIRMACION_TRASLADO, CONFIRMACION_RETIRO= range(8)
+REGISTRO_P1, REGISTRO_P2, OPCIONES, TRASLADO, RETIRO, CONSIGNACION, CONFIRMACION_TRASLADO, CONFIRMACION_RETIRO= range(8)
 TOKEN = config['KEYS']['bot_api']
 
 def start(bot, update):
@@ -77,37 +82,41 @@ def registro_p2(bot, update):
 
     us = usuario(num_cuenta=user.id, nombre=user.first_name, apellido=user.last_name, email=email)
 
+
     typing(bot, update)
-    registrado = us.registrar()
-    if registrado:
+    status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], email,
+                              "Registrando a MiBanco",
+                              "Estamos procesando tus datos</br>"
+                              "Si todo sale bien recibirás un Email confirmando tu registro", True)
 
-        msg2 = "<b>Tus Datos</b>\n" \
-               "<b>Nombre de usuario</b> : %s \n" \
-               "<b>Número de Cuenta</b> : %s \n" \
-               "<b>Saldo</b> : $500\n" \
-               "<b>Email</b> : %s" % (user.name, user.id, email)
-
+    time.sleep(3)
+    if status:
         typing(bot, update)
-        status = tools.send_email(config['SMTP']['email'],config['SMTP']['password'], email,
-                         "Bienvenido a MiBanco", "Nos Alegra que hagas parte de este KodeFest t.me/MiBanco_bot \n\n\n%s" %msg2, True)
+        registrado = us.registrar()
+        if registrado:
+            update.message.reply_text("Te hemos enviado un Email confirmandote los datos")
+            msg = "*Tus Datos*\n" \
+                  "*Nombre de usuario* : %s \n" \
+                  "*Número de Cuenta* : %s \n" \
+                  "*Saldo* : $500\n" \
+                  "*Email* : %s" % (user.name, user.id, email)
 
-        if status:
-            update.message.reply_text("Te hemos enviado un Email con la información registrada")
+            typing(bot, update)
+            tools.send_email(config['SMTP']['email'], config['SMTP']['password'], email,
+                                      "Bienvenido a MiBanco",
+                                      "Nos Alegra que hagas parte de este KodeFest t.me/MiBanco_bot", False)
+
+            send_message_MARKDOWN(bot, update, msg)
+            logging.info("Usuario %s registrado" % user.name)
+            # Opciones
+            show_options(bot, update)
         else:
-            update.message.reply_text("No pudimos enviarte el Email :(")
-
-        msg = "*Tus Datos*\n" \
-              "*Nombre de usuario* : %s \n" \
-              "*Número de Cuenta* : %s \n" \
-              "*Saldo* : $500\n" \
-              "*Email* : %s" % (user.name, user.id, email)
-        send_message_MARKDOWN(bot, update, msg)
-        logging.info("Usuario %s registrado" % user.name)
-        # Opciones
-        show_options(bot, update)
+            update.message.reply_text("Ups!, Ocurrió un error en tu registro, no se pudo realizar")
+            retorno = ConversationHandler.END
     else:
-        msg = "Ups!, Ocurrió un error en tu registro, no se pudo realizar"
+        update.message.reply_text("No pudimos enviarte el Email, intentalo de nuevo con /start:(")
         retorno = ConversationHandler.END
+
 
     return retorno
 
@@ -118,6 +127,7 @@ def opciones(bot, update):
     op = update.message.text
 
     if op == 'Traslado':
+        logging.info("Usuario %s en Traslado" % user.name)
         retorno = TRASLADO
         typing(bot,update)
         us = usuario(user.id)
@@ -133,7 +143,7 @@ def opciones(bot, update):
 
             if status:
                 send_message_MARKDOWN(bot, update, "Usted tiene un traslado en espera\n\n"
-                                                   "Verifique su Email e ingrese el código de verificación del traslado\n"
+                                                   "Verifique su Email e ingrese el código de verificación del Traslado\n"
                                                    "seguido de *A* -> Aceptar ó \n"
                                                    "*C* -> Cancelar\n"
                                                    "Ejemplo : 1111 - A")
@@ -148,6 +158,7 @@ def opciones(bot, update):
             update.message.reply_text("Por favor ingrese el número de cuenta a la que desea realizarle el traslado y el monto del mismo.\n"
                                   "Ejemplo : 78128456 - 50")
     if op == 'Retiro':
+        logging.info("Usuario %s en Retiro" % user.name)
         retorno = RETIRO
         typing(bot, update)
         us = usuario(user.id)
@@ -178,15 +189,18 @@ def opciones(bot, update):
 
 
 
-    if op == 'Préstamo':
-        update.message.reply_text("p")
+    if op == 'Consignación':
+        logging.info("Usuario %s en Consignación" % user.name)
+        update.message.reply_text("Ingrese el valor a consignar a su cuenta")
+        retorno = CONSIGNACION
 
-    logging.info("Usuario %s en opciones" % user.name)
+
 
     return retorno
 
 # TRASLADOS
 def traslados(bot, update):
+    update.message.reply_text("Estamos procesando tú petición...")
     retorno = OPCIONES
     user = update.message.from_user
     msg = update.message.text.replace(" ","").split("-")
@@ -259,12 +273,12 @@ def confirmacion_traslado(bot, update):
                                   "El monto recibido es : %s" % resultado2[1],
                                   True)
         if status:
-            update.message.reply_text("Email de notifiación de Traslado enviado")
+            update.message.reply_text("Email de notificación de Traslado enviado")
         typing(bot, update)
         us = usuario(user.id)
         us.cargar_datos()
         send_message_MARKDOWN(bot, update, "Traslado realizado con éxito\n"
-                                           "*Tú nuevo saldo es de* : %s" % us.saldo)
+                                           "*Tu nuevo saldo es de* : $%s" % us.saldo)
 
         show_options(bot,update)
     else:
@@ -278,6 +292,7 @@ def confirmacion_traslado(bot, update):
 
 # RETIROS
 def retiros(bot, update):
+    update.message.reply_text("Estamos procesando tú petición...")
     retorno = OPCIONES
     user = update.message.from_user
     monto_retirar = int(update.message.text)
@@ -336,7 +351,7 @@ def confirmacion_retiro(bot, update):
         us.cargar_datos()
 
         send_message_MARKDOWN(bot,update,"Retiro realizado con éxito\n"
-                                  "*Tú nuevo saldo es de* : %s" % us.saldo)
+                                  "*Tu nuevo saldo es de* : $%s" % us.saldo)
         show_options(bot, update)
     else:
         update.message.reply_text(resultado[1])
@@ -346,6 +361,25 @@ def confirmacion_retiro(bot, update):
             retorno = CONFIRMACION_RETIRO
     return retorno
 
+
+# CONSIGNACIONES
+def consignaciones(bot, update):
+    update.message.reply_text("Estamos procesando tú petición...")
+    retorno  = OPCIONES
+    user = update.message.from_user
+    valor = int(update.message.text)
+
+    consig = consignacion(numc_usuario= user.id, monto_consig=valor)
+    typing(bot, update)
+    resultado = consig.realizar_consignacion()
+
+    if resultado[0]:
+        send_message_MARKDOWN(bot, update, "Consignación realizada con éxito\n"
+                                           "*Tu nuevo saldo es de* : $%s" % resultado[1])
+    else:
+        update.message.reply_text("No he podido procesar tu consignación : %s" % resultado[1])
+
+    return retorno
 
 # ERRORES EN INGRESO DE DATOS
 def registro_incorrecto_p1(bot, update):
@@ -374,6 +408,43 @@ def retiro_incorrecto(bot, update):
 
     return RETIRO
 
+def opciones_incorrecto(bot, update):
+    update.message.reply_text("Opción incorrecta, por favor haga uso del teclado")
+    show_options(bot, update)
+    return OPCIONES
+
+def traslado_incorrecto(bot, update):
+    update.message.reply_text("Formato incorrecto")
+    update.message.reply_text("Por favor ingrese el número de cuenta a la que desea realizarle el traslado y el monto del mismo.\n"
+        "Ejemplo : 78128456 - 50")
+
+    return TRASLADO
+
+def confirmacionT_incorrecto(bot, update):
+    update.message.reply_text("Formato incorrecto")
+    send_message_MARKDOWN(bot, update, "Ingrese el código de verificación del Traslado\n"
+                                       "seguido de *A* -> Aceptar ó \n"
+                                       "*C* -> Cancelar\n"
+                                       "Ejemplo : 1111 - A")
+
+    return CONFIRMACION_TRASLADO
+
+
+def confirmacionR_incorrecto(bot, update):
+    update.message.reply_text("Formato incorrecto")
+    send_message_MARKDOWN(bot, update, "Ingrese el código de verificación del Retiro\n"
+                                       "seguido de *A* -> Aceptar ó \n"
+                                       "*C* -> Cancelar\n"
+                                       "Ejemplo : 1111 - A")
+    return CONFIRMACION_RETIRO
+
+def consig_incorrecto(bot, update):
+    update.message.reply_text("Valor inválido")
+    update.message.reply_text("Ingrese el valor a consignar a su cuenta")
+
+    return CONSIGNACION
+
+
 # OTROS COMANDOS
 def micuenta(bot, update):
     typing(bot, update)
@@ -386,7 +457,7 @@ def micuenta(bot, update):
         msg = "*Tus Datos*\n" \
               "*Nombre de usuario* : %s \n" \
               "*Número de Cuenta* : %s \n" \
-              "*Saldo* : %s\n" \
+              "*Saldo* : $%s\n" \
               "*Email* : %s" % (us.nombre + " " + us.apellido, us.num_cuenta, us.saldo, us.email)
         send_message_MARKDOWN(bot, update, msg)
         logging.info("Mi cuenta cargada del usuario %s cargados con exito ", user.id)
@@ -415,14 +486,14 @@ def help(bot, update):
 
 def cancelar(bot, update: update):
     user = update.message.from_user
-    update.message.reply_text('Hasta luego %s :)' % user.first_name)
+    update.message.reply_text('Hasta luego %s' % user.first_name)
 
     return ConversationHandler.END
 
 
 # OTRAS FUNCIONES
 def show_options(bot, update):
-    keyboard = [['Traslado', 'Retiro','Préstamo'], ["/start"],[ "/micuenta","/help","/cancel"]]
+    keyboard = [['Traslado','Retiro'], ['Consignación', 'Registro Movimientos'], ['/start'], ['/micuenta', '/help', '/cancel']]
 
     reply_markup = ReplyKeyboardMarkup(keyboard)
 
@@ -456,19 +527,21 @@ def main():
 
         states={
             REGISTRO_P1: [RegexHandler('^(S|N|s|n)$', registro_p1),  MessageHandler(Filters.text, registro_incorrecto_p1)],
-            #MessageHandler.filters(Filters.text)
+
             REGISTRO_P2: [RegexHandler('^[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', registro_p2),
                           MessageHandler(Filters.text,registro_incorrecto_p2)],
 
-            OPCIONES: [RegexHandler('^(Traslado|Retiro|Préstamo)$', opciones), MessageHandler(Filters.text,opciones_incorrecto)],
+            OPCIONES: [RegexHandler('^(Traslado|Retiro|Consignación)$', opciones), MessageHandler(Filters.text,opciones_incorrecto)],
 
-            TRASLADO: [RegexHandler('^\d+\s?\-\s?\d+$', traslados), MessageHandler(Filters.text,traslado_incorrecto_)],#PENDIENTE
+            TRASLADO: [RegexHandler('^\d+\s?\-\s?\d+$', traslados), MessageHandler(Filters.text,traslado_incorrecto)],
 
             CONFIRMACION_TRASLADO: [RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_traslado), MessageHandler(Filters.text,confirmacionT_incorrecto)],
 
             RETIRO:[RegexHandler('^\d+$', retiros), MessageHandler(Filters.text,retiro_incorrecto)],
 
-            CONFIRMACION_RETIRO: [RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_retiro),MessageHandler(Filters.text,confirmacionR_incorrecto)]
+            CONFIRMACION_RETIRO: [RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_retiro),MessageHandler(Filters.text,confirmacionR_incorrecto)],
+
+            CONSIGNACION: [RegexHandler('^\d+$', consignaciones), MessageHandler(Filters.text,consig_incorrecto)]
 
         },
 

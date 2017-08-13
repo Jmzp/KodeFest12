@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/consignacion.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boot.py" afterPath="$PROJECT_DIR$/boot.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/retiro.py" afterPath="$PROJECT_DIR$/model/retiro.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/traslado.py" afterPath="$PROJECT_DIR$/model/traslado.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/usuario.py" afterPath="$PROJECT_DIR$/model/usuario.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/tools.py" afterPath="$PROJECT_DIR$/tools/tools.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,10 +19,11 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/KodeFest12$connection.coverage" NAME="connection Coverage Results" MODIFIED="1502568143613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
-    <SUITE FILE_PATH="coverage/KodeFest12$boot.coverage" NAME="boot Coverage Results" MODIFIED="1502635078599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KodeFest12$boot.coverage" NAME="boot Coverage Results" MODIFIED="1502655089014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/KodeFest12$retiro.coverage" NAME="retiro Coverage Results" MODIFIED="1502630749841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/KodeFest12$usuario.coverage" NAME="usuario Coverage Results" MODIFIED="1502569636654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/KodeFest12$transaccion.coverage" NAME="transaccion Coverage Results" MODIFIED="1502581989861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
+    <SUITE FILE_PATH="coverage/KodeFest12$consignacion.coverage" NAME="consignacion Coverage Results" MODIFIED="1502649561161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -57,8 +60,8 @@
       <file leaf-file-name="boot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/boot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="374" column="17" lean-forward="false" selection-start-line="374" selection-start-column="17" selection-end-line="374" selection-end-column="17" />
+            <state relative-caret-position="340">
+              <caret line="101" column="62" lean-forward="false" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -66,23 +69,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usuario.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/usuario.py">
+      <file leaf-file-name="tools.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/tools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1494">
-              <caret line="117" column="38" lean-forward="true" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
+            <state relative-caret-position="34">
+              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="consignacion.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/consignacion.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
-                <marker date="1502631765907" expanded="true" signature="856:870" ph="SELECT * FRO... Retiros" />
-                <marker date="1502631765907" expanded="true" signature="856:899" ph="SELECT * FRO... Usuarios" />
-                <marker date="1502631765907" expanded="true" signature="856:900" ph="SELECT * FRO... Usuarios" />
-                <marker date="1502631765907" expanded="true" signature="856:921" ph="SELECT * FRO... Usuarios" />
-                <marker date="1502631765907" expanded="true" signature="1825:1877" ph="INSERT INTO Usuarios... " />
-                <marker date="1502631765907" expanded="true" signature="2783:2832" ph="SELECT nombr... Usuarios" />
-                <marker date="1502631765907" expanded="true" signature="2833:2853" ph="SELECT nombr... Usuarios" />
-                <marker date="1502631765907" expanded="true" signature="3440:3484" ph="SELECT nombr... Usuarios" />
-                <marker date="1502631765907" expanded="true" signature="4125:4233" ph="SELECT id_tr... Traslados" />
-                <marker date="1502631765907" expanded="true" signature="4955:5047" ph="SELECT id_re... Retiros" />
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1502653202483" expanded="true" signature="963:1031" ph="INSERT INTO Consignaciones... " />
+                <marker date="1502653202483" expanded="true" signature="963:1081" ph="INSERT INTO Retiros... " />
+                <marker date="1502653202483" expanded="true" signature="1381:1433" ph="UPDATE U SET... " />
               </folding>
             </state>
           </provider>
@@ -91,19 +107,19 @@
       <file leaf-file-name="traslado.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/traslado.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="126" column="42" lean-forward="true" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1502632490227" expanded="true" signature="1698:1884" ph="SELECT id_tr... Traslados" />
-                <marker date="1502632490227" expanded="true" signature="2501:2670" ph="INSERT INTO Traslados... " />
-                <marker date="1502632490227" expanded="true" signature="3116:3252" ph="SELECT id_tr... Traslados" />
-                <marker date="1502632490227" expanded="true" signature="5386:5432" ph="SELECT * FRO... Traslados" />
-                <marker date="1502632490227" expanded="true" signature="5386:5453" ph="SELECT * FRO... Traslados" />
-                <marker date="1502632490227" expanded="true" signature="5804:5894" ph="UPDATE Trasl... " />
-                <marker date="1502632490227" expanded="true" signature="5870:5894" ph="SELECT id_tr... Traslados" />
-                <marker date="1502632490227" expanded="true" signature="6383:6435" ph="UPDATE Usuar... " />
-                <marker date="1502632490227" expanded="true" signature="6643:6695" ph="UPDATE Usuar... " />
+                <marker date="1502652190111" expanded="true" signature="1709:1895" ph="SELECT id_tr... Traslados" />
+                <marker date="1502652190111" expanded="true" signature="2512:2681" ph="INSERT INTO Traslados... " />
+                <marker date="1502652190111" expanded="true" signature="3127:3263" ph="SELECT id_tr... Traslados" />
+                <marker date="1502652190111" expanded="true" signature="5397:5443" ph="SELECT * FRO... Traslados" />
+                <marker date="1502652190111" expanded="true" signature="5397:5464" ph="SELECT * FRO... Traslados" />
+                <marker date="1502652190111" expanded="true" signature="5815:5905" ph="UPDATE Trasl... " />
+                <marker date="1502652190111" expanded="true" signature="5881:5905" ph="SELECT id_tr... Traslados" />
+                <marker date="1502652190111" expanded="true" signature="6394:6446" ph="UPDATE Usuar... " />
+                <marker date="1502652190111" expanded="true" signature="6654:6706" ph="UPDATE Usuar... " />
               </folding>
             </state>
           </provider>
@@ -112,16 +128,16 @@
       <file leaf-file-name="retiro.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/retiro.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="117" column="44" lean-forward="false" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1502632490127" expanded="true" signature="1279:1428" ph="SELECT id_re... Retiros" />
-                <marker date="1502632490127" expanded="true" signature="1943:2060" ph="INSERT INTO Retiros... " />
-                <marker date="1502632490127" expanded="true" signature="2407:2519" ph="SELECT id_re... Retiros" />
-                <marker date="1502632490127" expanded="true" signature="4090:4166" ph="SELECT * FRO... Retiros" />
-                <marker date="1502632490127" expanded="true" signature="4454:4535" ph="UPDATE Retir... " />
-                <marker date="1502632490127" expanded="true" signature="5093:5145" ph="UPDATE Usuar... " />
+                <marker date="1502652190275" expanded="true" signature="1291:1440" ph="SELECT id_re... Retiros" />
+                <marker date="1502652190275" expanded="true" signature="1955:2072" ph="INSERT INTO Retiros... " />
+                <marker date="1502652190275" expanded="true" signature="2419:2531" ph="SELECT id_re... Retiros" />
+                <marker date="1502652190275" expanded="true" signature="4102:4178" ph="SELECT * FRO... Retiros" />
+                <marker date="1502652190275" expanded="true" signature="4466:4547" ph="UPDATE Retir... " />
+                <marker date="1502652190275" expanded="true" signature="5105:5157" ph="UPDATE Usuar... " />
               </folding>
             </state>
           </provider>
@@ -130,22 +146,10 @@
       <file leaf-file-name="connection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/connection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="850">
               <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connection_template.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/connection_template.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-              <folding>
-                <marker date="1502574035643" expanded="true" signature="3144:3168" ph="SELECT * FRO... Versiculos" />
               </folding>
             </state>
           </provider>
@@ -203,13 +207,15 @@
         <option value="$PROJECT_DIR$/db/conexion.py" />
         <option value="$PROJECT_DIR$/db/connection.py" />
         <option value="$PROJECT_DIR$/model/transaccion.py" />
-        <option value="$PROJECT_DIR$/tools/tools.py" />
         <option value="$PROJECT_DIR$/etc/config_template.ini" />
         <option value="$PROJECT_DIR$/db/connection_template.py" />
         <option value="$PROJECT_DIR$/etc/config.ini" />
         <option value="$PROJECT_DIR$/model/usuario.py" />
         <option value="$PROJECT_DIR$/model/traslado.py" />
         <option value="$PROJECT_DIR$/model/retiro.py" />
+        <option value="$PROJECT_DIR$/model/consignacion.py" />
+        <option value="$PROJECT_DIR$/tools/tools.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/boot.py" />
       </list>
     </option>
@@ -221,8 +227,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1044" />
+    <option name="x" value="601" />
+    <option name="y" value="215" />
+    <option name="width" value="1272" />
+    <option name="height" value="692" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -240,6 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,7 +320,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,25 +362,6 @@
       <module name="KodeFest12" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model/usuario.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="connection" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="KodeFest12" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/connection.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -430,6 +419,25 @@
       <module name="KodeFest12" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model/retiro.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="consignacion" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="KodeFest12" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model/consignacion.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -585,18 +593,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.usuario" />
-      <item index="1" class="java.lang.String" itemvalue="Python.connection" />
-      <item index="2" class="java.lang.String" itemvalue="Python.transaccion" />
-      <item index="3" class="java.lang.String" itemvalue="Python.boot" />
-      <item index="4" class="java.lang.String" itemvalue="Python.retiro" />
+      <item index="1" class="java.lang.String" itemvalue="Python.transaccion" />
+      <item index="2" class="java.lang.String" itemvalue="Python.boot" />
+      <item index="3" class="java.lang.String" itemvalue="Python.retiro" />
+      <item index="4" class="java.lang.String" itemvalue="Python.consignacion" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.boot" />
-        <item index="1" class="java.lang.String" itemvalue="Python.retiro" />
-        <item index="2" class="java.lang.String" itemvalue="Python.transaccion" />
-        <item index="3" class="java.lang.String" itemvalue="Python.usuario" />
-        <item index="4" class="java.lang.String" itemvalue="Python.connection" />
+        <item index="1" class="java.lang.String" itemvalue="Python.consignacion" />
+        <item index="2" class="java.lang.String" itemvalue="Python.retiro" />
+        <item index="3" class="java.lang.String" itemvalue="Python.transaccion" />
+        <item index="4" class="java.lang.String" itemvalue="Python.usuario" />
       </list>
     </recent_temporary>
   </component>
@@ -646,18 +654,25 @@
       <option name="project" value="LOCAL" />
       <updated>1502628764132</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Puliendo detalles">
+      <created>1502635640945</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1502635640945</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
+    <frame x="601" y="215" width="1272" height="692" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32765958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52040815" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -675,6 +690,29 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32553193" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -687,13 +725,123 @@
     <MESSAGE value="Traslados terminados" />
     <MESSAGE value="Retiro empezado" />
     <MESSAGE value="Retiro parcialmente terminado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Retiro parcialmente terminado" />
+    <MESSAGE value="Puliendo detalles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Puliendo detalles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/etc/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="55" lean-forward="false" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/config_template.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/usuario.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="117" column="38" lean-forward="true" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <marker date="1502631765907" expanded="true" signature="856:870" ph="SELECT * FRO... Retiros" />
+            <marker date="1502631765907" expanded="true" signature="856:899" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502631765907" expanded="true" signature="856:900" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502631765907" expanded="true" signature="856:921" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502631765907" expanded="true" signature="1825:1877" ph="INSERT INTO Usuarios... " />
+            <marker date="1502631765907" expanded="true" signature="2783:2832" ph="SELECT nombr... Usuarios" />
+            <marker date="1502631765907" expanded="true" signature="2833:2853" ph="SELECT nombr... Usuarios" />
+            <marker date="1502631765907" expanded="true" signature="3440:3484" ph="SELECT nombr... Usuarios" />
+            <marker date="1502631765907" expanded="true" signature="4125:4233" ph="SELECT id_tr... Traslados" />
+            <marker date="1502631765907" expanded="true" signature="4955:5047" ph="SELECT id_re... Retiros" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/traslado.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="126" column="42" lean-forward="true" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1502652190111" expanded="true" signature="1709:1895" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="2512:2681" ph="INSERT INTO Traslados... " />
+            <marker date="1502652190111" expanded="true" signature="3127:3263" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5443" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5464" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5815:5905" ph="UPDATE Trasl... " />
+            <marker date="1502652190111" expanded="true" signature="5881:5905" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="6394:6446" ph="UPDATE Usuar... " />
+            <marker date="1502652190111" expanded="true" signature="6654:6706" ph="UPDATE Usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/retiro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="117" column="44" lean-forward="false" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1502652190275" expanded="true" signature="1291:1440" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="1955:2072" ph="INSERT INTO Retiros... " />
+            <marker date="1502652190275" expanded="true" signature="2419:2531" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4102:4178" ph="SELECT * FRO... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4466:4547" ph="UPDATE Retir... " />
+            <marker date="1502652190275" expanded="true" signature="5105:5157" ph="UPDATE Usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/connection_template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+          <folding>
+            <marker date="1502574035643" expanded="true" signature="3144:3168" ph="SELECT * FRO... Versiculos" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d447f84e-fe5f-47dd-9b0f-86fd65217900/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6358">
+          <caret line="374" column="17" lean-forward="false" selection-start-line="374" selection-start-column="17" selection-end-line="374" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/etc/config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -736,15 +884,15 @@
           <caret line="75" column="74" lean-forward="false" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1502632490227" expanded="true" signature="1698:1884" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="2501:2670" ph="INSERT INTO Traslados... " />
-            <marker date="1502632490227" expanded="true" signature="3116:3252" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5386:5432" ph="SELECT * FRO... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5386:5453" ph="SELECT * FRO... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5804:5894" ph="UPDATE Trasl... " />
-            <marker date="1502632490227" expanded="true" signature="5870:5894" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="6383:6435" ph="UPDATE Usuar... " />
-            <marker date="1502632490227" expanded="true" signature="6643:6695" ph="UPDATE Usuar... " />
+            <marker date="1502652190111" expanded="true" signature="1709:1895" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="2512:2681" ph="INSERT INTO Traslados... " />
+            <marker date="1502652190111" expanded="true" signature="3127:3263" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5443" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5464" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5815:5905" ph="UPDATE Trasl... " />
+            <marker date="1502652190111" expanded="true" signature="5881:5905" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="6394:6446" ph="UPDATE Usuar... " />
+            <marker date="1502652190111" expanded="true" signature="6654:6706" ph="UPDATE Usuar... " />
           </folding>
         </state>
       </provider>
@@ -755,12 +903,12 @@
           <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502632490127" expanded="true" signature="1279:1428" ph="SELECT id_re... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="1943:2060" ph="INSERT INTO Retiros... " />
-            <marker date="1502632490127" expanded="true" signature="2407:2519" ph="SELECT id_re... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="4090:4166" ph="SELECT * FRO... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="4454:4535" ph="UPDATE Retir... " />
-            <marker date="1502632490127" expanded="true" signature="5093:5145" ph="UPDATE Usuar... " />
+            <marker date="1502652190275" expanded="true" signature="1291:1440" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="1955:2072" ph="INSERT INTO Retiros... " />
+            <marker date="1502652190275" expanded="true" signature="2419:2531" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4102:4178" ph="SELECT * FRO... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4466:4547" ph="UPDATE Retir... " />
+            <marker date="1502652190275" expanded="true" signature="5105:5157" ph="UPDATE Usuar... " />
           </folding>
         </state>
       </provider>
@@ -845,15 +993,15 @@
           <caret line="75" column="74" lean-forward="false" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1502632490227" expanded="true" signature="1698:1884" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="2501:2670" ph="INSERT INTO Traslados... " />
-            <marker date="1502632490227" expanded="true" signature="3116:3252" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5386:5432" ph="SELECT * FRO... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5386:5453" ph="SELECT * FRO... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5804:5894" ph="UPDATE Trasl... " />
-            <marker date="1502632490227" expanded="true" signature="5870:5894" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="6383:6435" ph="UPDATE Usuar... " />
-            <marker date="1502632490227" expanded="true" signature="6643:6695" ph="UPDATE Usuar... " />
+            <marker date="1502652190111" expanded="true" signature="1709:1895" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="2512:2681" ph="INSERT INTO Traslados... " />
+            <marker date="1502652190111" expanded="true" signature="3127:3263" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5443" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5464" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5815:5905" ph="UPDATE Trasl... " />
+            <marker date="1502652190111" expanded="true" signature="5881:5905" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="6394:6446" ph="UPDATE Usuar... " />
+            <marker date="1502652190111" expanded="true" signature="6654:6706" ph="UPDATE Usuar... " />
           </folding>
         </state>
       </provider>
@@ -864,12 +1012,12 @@
           <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502632490127" expanded="true" signature="1279:1428" ph="SELECT id_re... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="1943:2060" ph="INSERT INTO Retiros... " />
-            <marker date="1502632490127" expanded="true" signature="2407:2519" ph="SELECT id_re... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="4090:4166" ph="SELECT * FRO... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="4454:4535" ph="UPDATE Retir... " />
-            <marker date="1502632490127" expanded="true" signature="5093:5145" ph="UPDATE Usuar... " />
+            <marker date="1502652190275" expanded="true" signature="1291:1440" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="1955:2072" ph="INSERT INTO Retiros... " />
+            <marker date="1502652190275" expanded="true" signature="2419:2531" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4102:4178" ph="SELECT * FRO... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4466:4547" ph="UPDATE Retir... " />
+            <marker date="1502652190275" expanded="true" signature="5105:5157" ph="UPDATE Usuar... " />
           </folding>
         </state>
       </provider>
@@ -956,15 +1104,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1502632490227" expanded="true" signature="1698:1884" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="2501:2670" ph="INSERT INTO Traslados... " />
-            <marker date="1502632490227" expanded="true" signature="3116:3252" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5386:5432" ph="SELECT * FRO... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5386:5453" ph="SELECT * FRO... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5804:5894" ph="UPDATE Trasl... " />
-            <marker date="1502632490227" expanded="true" signature="5870:5894" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="6383:6435" ph="UPDATE Usuar... " />
-            <marker date="1502632490227" expanded="true" signature="6643:6695" ph="UPDATE Usuar... " />
+            <marker date="1502652190111" expanded="true" signature="1709:1895" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="2512:2681" ph="INSERT INTO Traslados... " />
+            <marker date="1502652190111" expanded="true" signature="3127:3263" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5443" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5464" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5815:5905" ph="UPDATE Trasl... " />
+            <marker date="1502652190111" expanded="true" signature="5881:5905" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="6394:6446" ph="UPDATE Usuar... " />
+            <marker date="1502652190111" expanded="true" signature="6654:6706" ph="UPDATE Usuar... " />
           </folding>
         </state>
       </provider>
@@ -975,12 +1123,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502632490127" expanded="true" signature="1279:1428" ph="SELECT id_re... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="1943:2060" ph="INSERT INTO Retiros... " />
-            <marker date="1502632490127" expanded="true" signature="2407:2519" ph="SELECT id_re... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="4090:4166" ph="SELECT * FRO... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="4454:4535" ph="UPDATE Retir... " />
-            <marker date="1502632490127" expanded="true" signature="5093:5145" ph="UPDATE Usuar... " />
+            <marker date="1502652190275" expanded="true" signature="1291:1440" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="1955:2072" ph="INSERT INTO Retiros... " />
+            <marker date="1502652190275" expanded="true" signature="2419:2531" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4102:4178" ph="SELECT * FRO... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4466:4547" ph="UPDATE Retir... " />
+            <marker date="1502652190275" expanded="true" signature="5105:5157" ph="UPDATE Usuar... " />
           </folding>
         </state>
       </provider>
@@ -1047,24 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d447f84e-fe5f-47dd-9b0f-86fd65217900/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/etc/config_template.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1073,63 +1203,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/etc/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="55" lean-forward="false" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/retiro.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="117" column="44" lean-forward="false" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502632490127" expanded="true" signature="1279:1428" ph="SELECT id_re... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="1943:2060" ph="INSERT INTO Retiros... " />
-            <marker date="1502632490127" expanded="true" signature="2407:2519" ph="SELECT id_re... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="4090:4166" ph="SELECT * FRO... Retiros" />
-            <marker date="1502632490127" expanded="true" signature="4454:4535" ph="UPDATE Retir... " />
-            <marker date="1502632490127" expanded="true" signature="5093:5145" ph="UPDATE Usuar... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/traslado.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="126" column="42" lean-forward="true" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1502632490227" expanded="true" signature="1698:1884" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="2501:2670" ph="INSERT INTO Traslados... " />
-            <marker date="1502632490227" expanded="true" signature="3116:3252" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5386:5432" ph="SELECT * FRO... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5386:5453" ph="SELECT * FRO... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="5804:5894" ph="UPDATE Trasl... " />
-            <marker date="1502632490227" expanded="true" signature="5870:5894" ph="SELECT id_tr... Traslados" />
-            <marker date="1502632490227" expanded="true" signature="6383:6435" ph="UPDATE Usuar... " />
-            <marker date="1502632490227" expanded="true" signature="6643:6695" ph="UPDATE Usuar... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/usuario.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1494">
-          <caret line="117" column="38" lean-forward="true" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
+        <state relative-caret-position="1887">
+          <caret line="117" column="38" lean-forward="false" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
             <marker date="1502631765907" expanded="true" signature="856:870" ph="SELECT * FRO... Retiros" />
@@ -1146,10 +1223,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/boot.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d447f84e-fe5f-47dd-9b0f-86fd65217900/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/connection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
-          <caret line="374" column="17" lean-forward="false" selection-start-line="374" selection-start-column="17" selection-end-line="374" selection-end-column="17" />
+          <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/retiro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1502652190275" expanded="true" signature="1291:1440" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="1955:2072" ph="INSERT INTO Retiros... " />
+            <marker date="1502652190275" expanded="true" signature="2419:2531" ph="SELECT id_re... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4102:4178" ph="SELECT * FRO... Retiros" />
+            <marker date="1502652190275" expanded="true" signature="4466:4547" ph="UPDATE Retir... " />
+            <marker date="1502652190275" expanded="true" signature="5105:5157" ph="UPDATE Usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/traslado.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1502652190111" expanded="true" signature="1709:1895" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="2512:2681" ph="INSERT INTO Traslados... " />
+            <marker date="1502652190111" expanded="true" signature="3127:3263" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5443" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5397:5464" ph="SELECT * FRO... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="5815:5905" ph="UPDATE Trasl... " />
+            <marker date="1502652190111" expanded="true" signature="5881:5905" ph="SELECT id_tr... Traslados" />
+            <marker date="1502652190111" expanded="true" signature="6394:6446" ph="UPDATE Usuar... " />
+            <marker date="1502652190111" expanded="true" signature="6654:6706" ph="UPDATE Usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/consignacion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1502653202483" expanded="true" signature="963:1031" ph="INSERT INTO Consignaciones... " />
+            <marker date="1502653202483" expanded="true" signature="963:1081" ph="INSERT INTO Retiros... " />
+            <marker date="1502653202483" expanded="true" signature="1381:1433" ph="UPDATE U SET... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="55" lean-forward="false" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="101" column="62" lean-forward="false" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

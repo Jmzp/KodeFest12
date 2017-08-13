@@ -1,7 +1,10 @@
 import time
 import logging
+import os
 from model.usuario import usuario
 from db.connection import connection
+
+
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -54,12 +57,12 @@ class retiro:
                                 "AND estado_retiro = 'E'", [self.numc_usuario]).fetchall()[0]
                             retorno = True
                             mensaje = output2[0]
-                            logging.info("Retiro en cola con exito a la espera de confirmación"
+                            logging.info("Retiro en cola con éxito a la espera de confirmación"
                                          " por el usuario %s", self.numc_usuario)
                         else:
-                            logging.info("Retiro fallida por el usuario %s",
+                            logging.info("Retiro fallido por el usuario %s",
                                          self.numc_usuario)
-                            mensaje = "Algo salio mal al realizar tu Retiro :("
+                            mensaje = "Algo salió mal al realizar tu Retiro :("
 
                 else:
                     output = output[0]
@@ -78,8 +81,8 @@ class retiro:
 
 
         else:
-            mensaje = "Usuario invalido"
-            logging.error("Usuario invalido, datos no iniciados correctamente")
+            mensaje = "Usuario inválido"
+            logging.error("Usuario inválido, datos no iniciados correctamente")
 
         return (retorno, mensaje)
 

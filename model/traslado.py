@@ -1,7 +1,9 @@
 import logging
 import time
+import os
 from model.usuario import usuario
 from db.connection import connection
+
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
