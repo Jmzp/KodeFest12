@@ -50,30 +50,21 @@ class connection:
     '''
         Ejcutamos una sentencia al servidor de bases de datos, se pasan los parametros respectivos.
     '''
-    def execute(self, str_query: str, params: [] = (), commit : bool = False, type_query : str = "DML"):
-        if type_query in ("DML", "DDL"):
-            try:
-                if self.cnx == None:
-                    print("\nPrimero debe iniciar una conexion valida, antes de poder consultar",file=sys.stderr)
-                    return None
-                else:
-                    cursor = self.cnx.cursor()
-                    cursor.execute(str_query, params=params)
-                    if commit:
-                        self.cnx.commit()
-                    if type_query == 'DML':
-                        output = cursor.fetchall()
-                        cursor.close()
-                    else:
-                        output = cursor.rowcount
-                        cursor.close()
+    def execute(self, str_query: str, params: [] = (), commit: bool = False):
+        output = None
+        try:
+            if self.cnx == None:
+                print("\nPrimero debe iniciar una conexion valida, antes de poder consultar", file=sys.stderr)
+            else:
+                cursor = self.cnx.cursor()
+                cursor.execute(str_query, params=params)
+                if commit:
+                    self.cnx.commit()
+                output = cursor
+        except mysql.connector.Error as err:
+            print("\nOcurrió un error al procesar la petición : " + str_query + "\n El error es : ", err,
+                  file=sys.stderr)
 
-            except mysql.connector.Error as err:
-                print("\nOcurrió un error al procesar la petición : "+ str_query + "\n El error es : ",err, file=sys.stderr)
-                output = 'Error'
-        else:
-            output = 'Invalido'
-            print("\nDebe seleccionar un tipo de peticion valida (DML o DLL)", file=sys.stderr)
         return output
 
     def call_procedure(self, name : str, parameters : list = [], commit : bool = True):

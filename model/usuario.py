@@ -10,8 +10,9 @@ logger = logging.getLogger(__name__)
 
 class usuario:
 
-    def __init__(self, num_cuenta : int = 0, saldo : float = 0, nombre : str = '',
-                 apellido : str = '', email : str = '', estado : str = '' ):
+    # A -> Activo, I -> Inactivo (Cuenta cancelada)
+    def __init__(self, num_cuenta : int = 0, saldo : int = 500, nombre : str = '',
+                 apellido : str = '', email : str = '', estado : str = 'A' ):
         self.num_cuenta = num_cuenta
         self.saldo = saldo
         self.nombre = nombre
@@ -55,6 +56,8 @@ class usuario:
                 rowcount = cursor.rowcount
                 if rowcount > 0:
                     retorno = True
+
+
                     logging.info("Usuario con email %s y numero de cuenta %s insertado correctamente" % (self.email, self.num_cuenta))
                 else:
                     logging.warning('Error registrando usuario %s' % self.email)
@@ -79,7 +82,7 @@ class usuario:
                 logging.info(
                     "Usuario %s ya se encuentra registrado" % (self.num_cuenta))
             else:
-                logging.warning("EL usuario %s no esta registrado" % self.email)
+                logging.warning("El usuario %s no esta registrado" % self.email)
         else:
             logging.error("Error interno al verificar usuario")
 
@@ -103,6 +106,28 @@ class usuario:
 
         con.close_connection()
         return retorno
+
+    def verificar_traslado_espera(self):
+        retorno = False
+        id_traslado = 0
+        con = connection()
+        cursor = con.execute(
+            "SELECT id_traslado FROM Traslados WHERE numc_usuario_expedidor = %s "
+            "AND estado_traslado = 'E'", [self.num_cuenta])
+        if cursor != None:
+            output = cursor.fetchall()
+            if len(output) >= 1:
+                retorno = True
+                id_traslado = output[0][0]
+                logging.info(
+                    "Traslado %s en espera" % (output[0]))
+            else:
+                logging.warning("No existen Traslados en espera de confirmación")
+        else:
+            logging.error("Error interno al verificar Traslado")
+        con.close_connection()
+        return (retorno,id_traslado)
+
 
 if __name__ == '__main__':
     us = usuario(111111)
