@@ -486,7 +486,7 @@ def help(bot, update):
     send_message_MARKDOWN(bot, update, "Con *MiBanco* puedes crear una cuenta y así realizar traslados, retiros, y mucho más. "
                           "Además no te preocupes MiBanco te avisará cada vez que realices un traslado o retiro vía Email "
                           "para que lo confirmes o canceles.\n\n"
-                          "Los comandos son los siguientes:\n\n"
+                          "Los *comandos* son los siguientes:\n\n"
                                        "/start - Iniciar bot y mostrar opciones\n"
                                        "/micuenta - Muestra los datos de tu cuenta\n"
                                        "/help - Te muestra los comandos a usar\n"

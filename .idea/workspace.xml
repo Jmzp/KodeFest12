@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/connection.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/etc/config.ini" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d447f84e-fe5f-47dd-9b0f-86fd65217900.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/d447f84e-fe5f-47dd-9b0f-86fd65217900.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boot.py" afterPath="$PROJECT_DIR$/boot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/traslado.py" afterPath="$PROJECT_DIR$/model/traslado.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/usuario.py" afterPath="$PROJECT_DIR$/model/usuario.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/tools.py" afterPath="$PROJECT_DIR$/tools/tools.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,8 +78,8 @@
       <file leaf-file-name="boot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/boot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="570" column="5" lean-forward="false" selection-start-line="570" selection-start-column="5" selection-end-line="570" selection-end-column="5" />
+            <state relative-caret-position="2363">
+              <caret line="369" column="47" lean-forward="true" selection-start-line="369" selection-start-column="47" selection-end-line="369" selection-end-column="47" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -1379,8 +1372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/boot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="570" column="5" lean-forward="false" selection-start-line="570" selection-start-column="5" selection-end-line="570" selection-end-column="5" />
+        <state relative-caret-position="2363">
+          <caret line="369" column="47" lean-forward="true" selection-start-line="369" selection-start-column="47" selection-end-line="369" selection-end-column="47" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
