@@ -189,7 +189,7 @@ class usuario:
                     <h2>Traslados (A : Aceptado, C : Cancelado, E : Espera)</h2>
                     <table style="width:100%">
                     <tr>
-                        <th>Usuario que recibió</th>
+                        <th>No Cuenta que recibió</th>
                         <th>Monto</th>
                         <th>Fecha Solicitud</th>
                         <th>Fecha Confirmación</th>
