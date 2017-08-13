@@ -195,6 +195,7 @@ def opciones(bot, update):
         retorno = CONSIGNACION
 
     if op == 'Registro Movimientos':
+        logging.info("Usuario %s solicitando Registro Movimientos" % user.name)
         typing(bot,update)
         update.message.reply_text("Estoy generando el informe, espera por favor")
         us = usuario(user.id)
@@ -205,6 +206,7 @@ def opciones(bot, update):
             typing(bot, update)
             bot.sendDocument(chat_id=update.message.chat.id, document=open('%s' % resultado[1], 'rb'))
             os.remove("%s" % resultado[1])
+            logging.info("Usuario %s informe enviado" % user.name)
         else:
             update.message.reply_text("No pude generar el informe, lo siento")
 

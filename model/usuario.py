@@ -205,6 +205,9 @@ class usuario:
             WHERE us.num_cuenta = %s
             ''', params=[self.num_cuenta])
 
+        if cursor == None:
+            retorno = False
+
         output = cursor.fetchall()
         for consig in output:
             str_temp = "<tr><td>$%s</td><td>%s</td></tr>" % (consig[0], consig[1])
@@ -219,6 +222,9 @@ class usuario:
             WHERE us.num_cuenta = %s
             ''', params=[self.num_cuenta])
 
+        if cursor == None:
+            retorno = False
+
         output = cursor.fetchall()
         for ret in output:
             str_temp = "<tr><td>$%s</td><td>%s</td><td>%s</td></tr>" % (ret[0], ret[1], ret[2])
@@ -232,6 +238,9 @@ class usuario:
             FROM  Traslados tra INNER JOIN Usuarios us ON tra.numc_usuario_expedidor = us.num_cuenta
             WHERE us.num_cuenta = %s
             ''', params=[self.num_cuenta])
+
+        if cursor == None:
+            retorno = False
 
         output = cursor.fetchall()
         for tras in output:
