@@ -165,8 +165,8 @@ class usuario:
             }
             </style>
             </head>
-            <h2> Usuario %s, Número de cuenta %s</h2>
-        ''' % (self.nombre, self.num_cuenta)
+            <h2> Usuario %s %s, Número de cuenta %s</h2>
+        ''' % (self.nombre, self.apellido if self.apellido != '' else '-', self.num_cuenta)
         strHTMLConsig = '''
         <h2>Consignaciones</h2>
         <table style="width:100%">
