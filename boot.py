@@ -28,7 +28,7 @@ config = configparser.ConfigParser()
 config.read("etc/config.ini")
 
 
-REGISTRO_P1, REGISTRO_P2, OPCIONES, TRASLADO, RETIRO, CONSIGNACION, CONFIRMACION_TRASLADO, CONFIRMACION_RETIRO= range(8)
+REGISTRO_P1, REGISTRO_P2, OPCIONES, TRASLADO, RETIRO, CONSIGNACION, CONFIRMACION_TRASLADO, CONFIRMACION_RETIRO, REGISTRO_MOVIMIENTOS = range(9)
 TOKEN = config['KEYS']['bot_api']
 
 def start(bot, update):
@@ -86,9 +86,9 @@ def registro_p2(bot, update):
     typing(bot, update)
     status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], email,
                               "Registrando a MiBanco",
-                              "Estamos procesando tus datos</br>"
-                              "Si todo sale bien recibirás un Email confirmando tu registro", True)
+                              "Estamos procesando tus datos, si todo sale bien recibirás un Email confirmando tu registro", True)
 
+    typing(bot, update)
     time.sleep(1)
     if status:
         typing(bot, update)
@@ -194,13 +194,25 @@ def opciones(bot, update):
         update.message.reply_text("Ingrese el valor a consignar a su cuenta")
         retorno = CONSIGNACION
 
-
+    if op == 'Registro Movimientos':
+        typing(bot,update)
+        update.message.reply_text("Estoy generando el informe, espera por favor")
+        us = usuario(user.id)
+        typing(bot, update)
+        us.cargar_datos()
+        resultado = us.registro_movimientos('res/')
+        if resultado[0]:
+            typing(bot, update)
+            bot.sendDocument(chat_id=update.message.chat.id, document=open('%s' % resultado[1], 'rb'))
+            os.remove("%s" % resultado[1])
+        else:
+            update.message.reply_text("No pude generar el informe, lo siento")
 
     return retorno
 
 # TRASLADOS
 def traslados(bot, update):
-    update.message.reply_text("Estamos procesando tú petición...")
+    update.message.reply_text("Estoy procesando tú petición...")
     retorno = OPCIONES
     user = update.message.from_user
     msg = update.message.text.replace(" ","").split("-")
@@ -270,7 +282,8 @@ def confirmacion_traslado(bot, update):
         typing(bot, update)
         status = tools.send_email(config['SMTP']['email'], config['SMTP']['password'], resultado2[0],
                                   "Usted ha recibido un Traslado de Dinero",
-                                  "El monto recibido es : %s" % resultado2[1],
+                                  "El monto recibido es : $%s y fue enviado por %s con número de cuenta %s" %
+                                  (resultado2[1], resultado2[2], resultado2[3]),
                                   True)
         if status:
             update.message.reply_text("Email de notificación de Traslado enviado")
@@ -292,7 +305,7 @@ def confirmacion_traslado(bot, update):
 
 # RETIROS
 def retiros(bot, update):
-    update.message.reply_text("Estamos procesando tú petición...")
+    update.message.reply_text("Estoy procesando tú petición...")
     retorno = OPCIONES
     user = update.message.from_user
     monto_retirar = int(update.message.text)
@@ -364,7 +377,7 @@ def confirmacion_retiro(bot, update):
 
 # CONSIGNACIONES
 def consignaciones(bot, update):
-    update.message.reply_text("Estamos procesando tú petición...")
+    update.message.reply_text("Estoy procesando tú petición...")
     retorno  = OPCIONES
     user = update.message.from_user
     valor = int(update.message.text)
@@ -531,7 +544,7 @@ def main():
             REGISTRO_P2: [RegexHandler('^[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', registro_p2),
                           MessageHandler(Filters.text,registro_incorrecto_p2)],
 
-            OPCIONES: [RegexHandler('^(Traslado|Retiro|Consignación)$', opciones), MessageHandler(Filters.text,opciones_incorrecto)],
+            OPCIONES: [RegexHandler('^(Traslado|Retiro|Consignación|Registro Movimientos)$', opciones), MessageHandler(Filters.text,opciones_incorrecto)],
 
             TRASLADO: [RegexHandler('^\d+\s?\-\s?\d+$', traslados), MessageHandler(Filters.text,traslado_incorrecto)],
 
@@ -541,7 +554,7 @@ def main():
 
             CONFIRMACION_RETIRO: [RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_retiro),MessageHandler(Filters.text,confirmacionR_incorrecto)],
 
-            CONSIGNACION: [RegexHandler('^\d+$', consignaciones), MessageHandler(Filters.text,consig_incorrecto)]
+            CONSIGNACION: [RegexHandler('^\d+$', consignaciones), MessageHandler(Filters.text,consig_incorrecto)],
 
         },
 
@@ -555,14 +568,14 @@ def main():
     dp.add_error_handler(error)
 
     # Iniciamos el bot
-    updater.start_polling()
+    #updater.start_polling()
 
-    #PORT = int(os.environ.get('PORT', '5000'))
-    #updater.start_webhook(listen="0.0.0.0",
-    #                      port=PORT,
-    #                      url_path=TOKEN)
+    PORT = int(os.environ.get('PORT', '5000'))
+    updater.start_webhook(listen="0.0.0.0",
+                          port=PORT,
+                          url_path=TOKEN)
 
-    #updater.bot.set_webhook("https://kodefest12.herokuapp.com/" + TOKEN)
+    updater.bot.set_webhook("https://kodefest12.herokuapp.com/" + TOKEN)
 
     updater.idle()
 

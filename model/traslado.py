@@ -127,7 +127,7 @@ class traslado:
                                                 [saldo_disp_us2, us2.num_cuenta], True).rowcount
                         if rowcount2 == 1 and rowcount3 == 1:
                             retorno = True
-                            mensaje = "%s-%s" % (us2.email, monto)
+                            mensaje = "%s-%s-%s-%s" % (us2.email, monto, us.nombre, us.num_cuenta)
                             logging.info("Traslado aceptado")
                     else:
                         mensaje = "Traslado cancelado"
