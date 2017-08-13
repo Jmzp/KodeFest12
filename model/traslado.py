@@ -32,7 +32,7 @@ class traslado:
                 if us1.cargar_datos():
                     if us2.cargar_datos():
                         con = connection()
-                        # Si la traslado es E -> ESpera, A -> Aceptada, C -> Cancelada
+                        # Si el estado del traslado es E -> ESpera, A -> Aceptada, C -> Cancelada
                         # Solo tomamos una posicion porque solo puede haber una traslado en cola
                         output = con.execute(
                             "SELECT id_traslado, numc_usuario_receptor, monto_traslado, fecha_inicio_traslado FROM Traslados WHERE numc_usuario_expedidor = %s "
@@ -41,7 +41,7 @@ class traslado:
                         if len(output) == 0:
                             saldo_disp = us1.saldo - self.monto_traslado
                             if saldo_disp < 0:
-                                mensaje = "Usted no posee suficiente dinero para realizar los traslados"
+                                mensaje = "Usted no posee suficiente dinero para realizar el Traslados"
                                 logging.warning(
                                     "Usuario 1 %s no tiene fondos para realizar los traslados" % self.numc_usuario_expedidor)
                             else:
@@ -63,7 +63,7 @@ class traslado:
                                 else:
                                     logging.info("Traslado fallida por el usuario %s",
                                                     self.numc_usuario_expedidor)
-                                    mensaje = "Algo salio mal al actualizar tu saldo :("
+                                    mensaje = "Algo salio mal al realizar tu Traslado :("
 
                         else:
                             output = output[0]
@@ -113,7 +113,7 @@ class traslado:
                 if rowcount == 1:
                     if estado_traslado == 'A':
 
-                        logging.info("Cambiando el estaso del Traslado %s a Aceptado" % self.id_traslado)
+                        logging.info("Cambiando los saldos de los usuario despues del Traslado %s Aceptado" % self.id_traslado)
 
                         monto = output[3]
                         saldo_disp_us1 = us.saldo - monto
