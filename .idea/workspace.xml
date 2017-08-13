@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="" />
+    <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/usuario.py" afterPath="$PROJECT_DIR$/model/usuario.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="boot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/boot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1054">
-              <caret line="499" column="42" lean-forward="false" selection-start-line="499" selection-start-column="42" selection-end-line="499" selection-end-column="42" />
+            <state relative-caret-position="5984">
+              <caret line="583" column="0" lean-forward="true" selection-start-line="583" selection-start-column="0" selection-end-line="583" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -85,28 +87,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usuario.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="usuario.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/usuario.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="191" column="37" lean-forward="false" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
+            <state relative-caret-position="221">
+              <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1502660436231" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
-                <marker date="1502660436231" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
-                <marker date="1502660436231" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
-                <marker date="1502660436231" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
-                <marker date="1502660436231" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
-                <marker date="1502660436231" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
-                <marker date="1502660436231" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
-                <marker date="1502660436231" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
-                <marker date="1502660436231" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
-                <marker date="1502660436231" expanded="true" signature="5006:5098" ph="SELECT id_re... Retiros" />
-                <marker date="1502660436231" expanded="true" signature="7265:7439" ph="SELECT con.m... Consignaciones" />
-                <marker date="1502660436231" expanded="true" signature="7307:7437" ph="SELECT con.f... Consignaciones" />
-                <marker date="1502660436231" expanded="true" signature="7307:7439" ph="SELECT con.f... Consignaciones" />
-                <marker date="1502660436231" expanded="true" signature="7832:8022" ph="SELECT re.mo... Retiros" />
-                <marker date="1502660436231" expanded="true" signature="8419:8681" ph="SELECT tra.n... Traslados" />
+                <marker date="1502662067827" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
+                <marker date="1502662067827" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
+                <marker date="1502662067827" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
+                <marker date="1502662067827" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
+                <marker date="1502662067827" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
+                <marker date="1502662067827" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
+                <marker date="1502662067827" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
+                <marker date="1502662067827" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
+                <marker date="1502662067827" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
+                <marker date="1502662067827" expanded="true" signature="5003:5095" ph="SELECT id_re... Retiros" />
+                <marker date="1502662067827" expanded="true" signature="7262:7436" ph="SELECT con.m... Consignaciones" />
+                <marker date="1502662067827" expanded="true" signature="7304:7434" ph="SELECT con.f... Consignaciones" />
+                <marker date="1502662067827" expanded="true" signature="7304:7436" ph="SELECT con.f... Consignaciones" />
+                <marker date="1502662067827" expanded="true" signature="7829:8019" ph="SELECT re.mo... Retiros" />
+                <marker date="1502662067827" expanded="true" signature="8416:8678" ph="SELECT tra.n... Traslados" />
               </folding>
             </state>
           </provider>
@@ -229,8 +231,8 @@
         <option value="$PROJECT_DIR$/model/traslado.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d447f84e-fe5f-47dd-9b0f-86fd65217900/console.sql" />
         <option value="$PROJECT_DIR$/tools/tools.py" />
-        <option value="$PROJECT_DIR$/model/usuario.py" />
         <option value="$PROJECT_DIR$/boot.py" />
+        <option value="$PROJECT_DIR$/model/usuario.py" />
       </list>
     </option>
   </component>
@@ -775,21 +777,21 @@
           <caret line="117" column="38" lean-forward="true" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1502660436231" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
-            <marker date="1502660436231" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
-            <marker date="1502660436231" expanded="true" signature="5006:5098" ph="SELECT id_re... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="7265:7439" ph="SELECT con.m... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7437" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7439" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7832:8022" ph="SELECT re.mo... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="8419:8681" ph="SELECT tra.n... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
+            <marker date="1502662067827" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="5003:5095" ph="SELECT id_re... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="7262:7436" ph="SELECT con.m... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7434" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7436" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7829:8019" ph="SELECT re.mo... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="8416:8678" ph="SELECT tra.n... Traslados" />
           </folding>
         </state>
       </provider>
@@ -889,21 +891,21 @@
           <caret line="124" column="50" lean-forward="false" selection-start-line="124" selection-start-column="50" selection-end-line="124" selection-end-column="50" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1502660436231" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
-            <marker date="1502660436231" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
-            <marker date="1502660436231" expanded="true" signature="5006:5098" ph="SELECT id_re... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="7265:7439" ph="SELECT con.m... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7437" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7439" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7832:8022" ph="SELECT re.mo... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="8419:8681" ph="SELECT tra.n... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
+            <marker date="1502662067827" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="5003:5095" ph="SELECT id_re... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="7262:7436" ph="SELECT con.m... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7434" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7436" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7829:8019" ph="SELECT re.mo... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="8416:8678" ph="SELECT tra.n... Traslados" />
           </folding>
         </state>
       </provider>
@@ -1003,21 +1005,21 @@
           <caret line="124" column="50" lean-forward="true" selection-start-line="124" selection-start-column="50" selection-end-line="124" selection-end-column="50" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1502660436231" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
-            <marker date="1502660436231" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
-            <marker date="1502660436231" expanded="true" signature="5006:5098" ph="SELECT id_re... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="7265:7439" ph="SELECT con.m... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7437" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7439" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7832:8022" ph="SELECT re.mo... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="8419:8681" ph="SELECT tra.n... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
+            <marker date="1502662067827" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="5003:5095" ph="SELECT id_re... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="7262:7436" ph="SELECT con.m... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7434" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7436" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7829:8019" ph="SELECT re.mo... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="8416:8678" ph="SELECT tra.n... Traslados" />
           </folding>
         </state>
       </provider>
@@ -1119,21 +1121,21 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1502660436231" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
-            <marker date="1502660436231" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
-            <marker date="1502660436231" expanded="true" signature="5006:5098" ph="SELECT id_re... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="7265:7439" ph="SELECT con.m... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7437" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7439" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7832:8022" ph="SELECT re.mo... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="8419:8681" ph="SELECT tra.n... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
+            <marker date="1502662067827" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="5003:5095" ph="SELECT id_re... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="7262:7436" ph="SELECT con.m... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7434" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7436" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7829:8019" ph="SELECT re.mo... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="8416:8678" ph="SELECT tra.n... Traslados" />
           </folding>
         </state>
       </provider>
@@ -1343,37 +1345,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/usuario.py">
+    <entry file="file://$PROJECT_DIR$/boot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="191" column="37" lean-forward="false" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
+        <state relative-caret-position="5984">
+          <caret line="583" column="0" lean-forward="true" selection-start-line="583" selection-start-column="0" selection-end-line="583" selection-end-column="0" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <marker date="1502660436231" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
-            <marker date="1502660436231" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
-            <marker date="1502660436231" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
-            <marker date="1502660436231" expanded="true" signature="5006:5098" ph="SELECT id_re... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="7265:7439" ph="SELECT con.m... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7437" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7307:7439" ph="SELECT con.f... Consignaciones" />
-            <marker date="1502660436231" expanded="true" signature="7832:8022" ph="SELECT re.mo... Retiros" />
-            <marker date="1502660436231" expanded="true" signature="8419:8681" ph="SELECT tra.n... Traslados" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/boot.py">
+    <entry file="file://$PROJECT_DIR$/model/usuario.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1054">
-          <caret line="499" column="42" lean-forward="false" selection-start-line="499" selection-start-column="42" selection-end-line="499" selection-end-column="42" />
+        <state relative-caret-position="221">
+          <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
+            <marker date="1502662067827" expanded="true" signature="887:901" ph="SELECT * FRO... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="887:930" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:931" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="887:952" ph="SELECT * FRO... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="1855:1907" ph="INSERT INTO Usuarios... " />
+            <marker date="1502662067827" expanded="true" signature="2833:2882" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="2883:2903" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="3490:3534" ph="SELECT nombr... Usuarios" />
+            <marker date="1502662067827" expanded="true" signature="4175:4283" ph="SELECT id_tr... Traslados" />
+            <marker date="1502662067827" expanded="true" signature="5003:5095" ph="SELECT id_re... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="7262:7436" ph="SELECT con.m... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7434" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7304:7436" ph="SELECT con.f... Consignaciones" />
+            <marker date="1502662067827" expanded="true" signature="7829:8019" ph="SELECT re.mo... Retiros" />
+            <marker date="1502662067827" expanded="true" signature="8416:8678" ph="SELECT tra.n... Traslados" />
           </folding>
         </state>
       </provider>

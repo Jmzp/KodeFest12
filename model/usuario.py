@@ -117,7 +117,7 @@ class usuario:
             if len(output) == 1:
                 output = output[0]
                 retorno = True
-                id_traslado = output[0][0]
+                id_traslado = output[0]
                 logging.info(
                     "Traslado %s en espera" % (output[0]))
             else:
