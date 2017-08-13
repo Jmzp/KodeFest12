@@ -164,7 +164,9 @@ def opciones(bot, update):
             update.message.reply_text("Por favor ingrese el número de cuenta a la que desea realizarle el traslado y el monto del mismo.\n"
                                   "Ejemplo : 78128456 - 50")
     if op == 'Retiro':
-        update.message.reply_text("r")
+        update.message.reply_text("Por favor escriba la cantidad de dinero a retirar")
+
+
     if op == 'Préstamo':
         update.message.reply_text("p")
 
@@ -246,6 +248,10 @@ def confirmacion_traslado(bot, update):
     return retorno
 
 
+def retiro(bot, update):
+    pass
+
+
 
 def micuenta(bot, update):
     typing(bot, update)
@@ -323,11 +329,13 @@ def main():
             REGISTRO_P2: [RegexHandler('^[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', registro_p2),
                           RegexHandler('^.*?$', registro_incorrecto_p2)],
 
-            OPCIONES:[RegexHandler('^(Traslado|Retiro|Préstamo)$', opciones)],
+            OPCIONES: [RegexHandler('^(Traslado|Retiro|Préstamo)$', opciones)],
 
-            TRASLADO:[RegexHandler('^\d+\s?\-\s?\d+$', traslados)],
+            TRASLADO: [RegexHandler('^\d+\s?\-\s?\d+$', traslados)],
 
-            CONFIRMACION_TRASLADO:[RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_traslado)]
+            CONFIRMACION_TRASLADO: [RegexHandler('^\d+\s?-\s?(A|a|C|c)$', confirmacion_traslado)],
+
+            RETIRO:[RegexHandler('^\d+$', retiro)]
 
         },
 
