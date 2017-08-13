@@ -207,7 +207,7 @@ class usuario:
 
         output = cursor.fetchall()
         for consig in output:
-            str_temp = "<tr><td>%s</td><td>%s</td></tr>" % (consig[0], consig[1])
+            str_temp = "<tr><td>$%s</td><td>%s</td></tr>" % (consig[0], consig[1])
             strHTMLConsig += str_temp
 
         strHTML += strHTMLConsig + "</table>"
@@ -221,7 +221,7 @@ class usuario:
 
         output = cursor.fetchall()
         for ret in output:
-            str_temp = "<tr><td>%s</td><td>%s</td><td>%s</td></tr>" % (ret[0], ret[1], ret[2])
+            str_temp = "<tr><td>$%s</td><td>%s</td><td>%s</td></tr>" % (ret[0], ret[1], ret[2])
             strHTMLRet += str_temp
 
         strHTML += strHTMLRet + "</table>"
@@ -235,7 +235,7 @@ class usuario:
 
         output = cursor.fetchall()
         for tras in output:
-            str_temp = "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (tras[0], tras[1], tras[2],
+            str_temp = "<tr><td>%s</td><td>$%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (tras[0], tras[1], tras[2],
                                                                                              tras[3], tras[4])
             strHTMLTras += str_temp
 
