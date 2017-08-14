@@ -8,7 +8,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-
+# Modelo que representa el Usuario de la DB
 class usuario:
     # A -> Activo, I -> Inactivo (Cuenta cancelada)
     def __init__(self, num_cuenta: int = 0, saldo: int = 500, nombre: str = '',

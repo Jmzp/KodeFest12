@@ -11,6 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
+# Herramientas varias
 def send_email(correo_from_send: str, password: str, correo_to_send: str, asunto: str, mensaje: str,
                is_html: bool) -> bool:
     # Si se puede enviar el email entonces el status permanecera siendo True

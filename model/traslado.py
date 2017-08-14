@@ -11,7 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-
+# Modelo que representa la traslado de la DB
 class traslado:
     def __init__(self, id_traslado: int = 0, numc_usuario_expedidor: int = 0, numc_usuario_receptor: int = 0,
                  monto_traslado: int = 0, fecha_inicio_traslado=time.strftime('%Y-%m-%d %H:%M:%S'), fecha_fin_traslado=None,

@@ -11,6 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+# Modelo que representa el retiro de la DB
 class retiro:
 
     def __init__(self, id_retiro : int = 0, numc_usuario : int = '',

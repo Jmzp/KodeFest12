@@ -13,6 +13,7 @@ from model.retiro import retiro
 from model.consignacion import consignacion
 
 
+# Cambiamos direccion horaria
 os.environ['TZ'] = 'America/Bogota'
 time.tzset()
 

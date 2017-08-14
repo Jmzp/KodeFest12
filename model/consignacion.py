@@ -11,6 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+# Modelo que representa la consignacion de la DB
 class consignacion:
 
     def __init__(self, id_consignacion : int = 0, numc_usuario : int = '',
