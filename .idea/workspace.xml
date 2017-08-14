@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boot.py" afterPath="$PROJECT_DIR$/boot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/connection_template.py" afterPath="$PROJECT_DIR$/db/connection_template.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/consignacion.py" afterPath="$PROJECT_DIR$/model/consignacion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/retiro.py" afterPath="$PROJECT_DIR$/model/retiro.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/traslado.py" afterPath="$PROJECT_DIR$/model/traslado.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/usuario.py" afterPath="$PROJECT_DIR$/model/usuario.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/tools.py" afterPath="$PROJECT_DIR$/tools/tools.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/config_template.ini" afterPath="$PROJECT_DIR$/etc/config_template.ini" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,17 +56,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config_template.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/etc/config_template.ini">
+      <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/etc/config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+            <state relative-caret-position="68">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config_template.ini" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/etc/config_template.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="boot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/boot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
@@ -177,16 +181,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="empty.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/empty.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="connection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/connection.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -252,9 +246,7 @@
         <option value="$PROJECT_DIR$/db/conexion.py" />
         <option value="$PROJECT_DIR$/db/connection.py" />
         <option value="$PROJECT_DIR$/model/transaccion.py" />
-        <option value="$PROJECT_DIR$/etc/config_template.ini" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/etc/config.ini" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d447f84e-fe5f-47dd-9b0f-86fd65217900/console.sql" />
         <option value="$PROJECT_DIR$/res/empty.txt" />
         <option value="$PROJECT_DIR$/db/connection_template.py" />
@@ -264,6 +256,8 @@
         <option value="$PROJECT_DIR$/model/consignacion.py" />
         <option value="$PROJECT_DIR$/model/usuario.py" />
         <option value="$PROJECT_DIR$/boot.py" />
+        <option value="$PROJECT_DIR$/etc/config.ini" />
+        <option value="$PROJECT_DIR$/etc/config_template.ini" />
       </list>
     </option>
   </component>
@@ -727,7 +721,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502675901985</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Proyecto Estable">
+      <created>1502676076211</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1502676076211</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -793,7 +794,8 @@
     <MESSAGE value="Retiro parcialmente terminado" />
     <MESSAGE value="Puliendo detalles" />
     <MESSAGE value="Proyecto Stable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Proyecto Stable" />
+    <MESSAGE value="Proyecto Estable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proyecto Estable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1269,14 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/etc/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d447f84e-fe5f-47dd-9b0f-86fd65217900/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1288,14 +1282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-462">
           <caret line="504" column="0" lean-forward="false" selection-start-line="504" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etc/config_template.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1416,6 +1402,22 @@
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/config_template.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
