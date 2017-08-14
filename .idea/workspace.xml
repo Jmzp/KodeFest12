@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="Proyecto Estable">
+    <list default="true" id="64f95eb9-4702-4aaf-a366-dcdc0b362a21" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/empty.txt" afterPath="$PROJECT_DIR$/res/empty.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,11 +76,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="empty.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="empty.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/empty.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="62" lean-forward="false" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -191,16 +201,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/connection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -243,7 +243,6 @@
         <option value="$PROJECT_DIR$/db/conexion.py" />
         <option value="$PROJECT_DIR$/db/connection.py" />
         <option value="$PROJECT_DIR$/model/transaccion.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d447f84e-fe5f-47dd-9b0f-86fd65217900/console.sql" />
         <option value="$PROJECT_DIR$/db/connection_template.py" />
         <option value="$PROJECT_DIR$/tools/tools.py" />
@@ -255,6 +254,7 @@
         <option value="$PROJECT_DIR$/etc/config.ini" />
         <option value="$PROJECT_DIR$/etc/config_template.ini" />
         <option value="$PROJECT_DIR$/res/empty.txt" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -739,7 +739,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502676121679</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Proyecto Estable">
+      <created>1502676335155</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1502676335155</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1275,13 +1282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d447f84e-fe5f-47dd-9b0f-86fd65217900/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1428,6 +1428,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="62" lean-forward="false" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>

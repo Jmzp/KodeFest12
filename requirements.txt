@@ -2,14 +2,11 @@ certifi==2017.7.27.1
 chardet==3.0.4
 cairocffi==0.6
 click==6.7
-setuptools
-Flask==0.12
 future==0.16.0
 idna==2.5
 itsdangerous==0.24
 MarkupSafe==1.0
 mysql-connector==2.1.4
-numpy==1.13.1
 python-telegram-bot==7.0.1
 requests==2.18.1
 sip==4.19.1
