@@ -15,7 +15,7 @@ Repositorio para el KodeFest del grupo 12, Telegram Bot que simula un Banco
  
 
 ### Linux
-#### Previamente Debian/Ubuntu
+#### Previamente para Debian/Ubuntu
 Instalando *pip*<br /><br />
 `sudo apt update && sudo apt install python3-pip`<br /><br />
 Si *pip* no esta actualizado<br /><br />
