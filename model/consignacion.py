@@ -1,15 +1,15 @@
-import time
-import os
 import logging
-from model.usuario import usuario
-from db.connection import connection
+import time
 
+from db.connection import connection
+from model.usuario import usuario
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
+
 
 # Modelo que representa la consignacion de la DB
 class consignacion:

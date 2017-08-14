@@ -2,9 +2,6 @@ import mysql.connector
 import sys
 from mysql.connector import errorcode
 
-
-
-
 class connection:
     def __init__(self, hostname : str = "localhost", database : str = "dbMy", user : str = "root",
                  password : str = ""):

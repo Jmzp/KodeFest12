@@ -1,4 +1,6 @@
-import logging, time
+import logging
+import time
+
 from db.connection import connection
 from tools.tools import createPDF
 
@@ -7,6 +9,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
+
 
 # Modelo que representa el Usuario de la DB
 class usuario:

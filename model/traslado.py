@@ -1,9 +1,8 @@
 import logging
 import time
-import os
-from model.usuario import usuario
-from db.connection import connection
 
+from db.connection import connection
+from model.usuario import usuario
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -11,10 +10,12 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+
 # Modelo que representa la traslado de la DB
 class traslado:
     def __init__(self, id_traslado: int = 0, numc_usuario_expedidor: int = 0, numc_usuario_receptor: int = 0,
-                 monto_traslado: int = 0, fecha_inicio_traslado=time.strftime('%Y-%m-%d %H:%M:%S'), fecha_fin_traslado=None,
+                 monto_traslado: int = 0, fecha_inicio_traslado=time.strftime('%Y-%m-%d %H:%M:%S'),
+                 fecha_fin_traslado=None,
                  estado_traslado: str = 'E'):
         self.id_traslado = id_traslado
         self.numc_usuario_expedidor = numc_usuario_expedidor
@@ -61,10 +62,10 @@ class traslado:
                                     retorno = True
                                     mensaje = output2[0]
                                     logging.info("Traslado en cola con exito a la espera de confirmación"
-                                                     " por el usuario %s", self.numc_usuario_expedidor)
+                                                 " por el usuario %s", self.numc_usuario_expedidor)
                                 else:
                                     logging.info("Traslado fallida por el usuario %s",
-                                                    self.numc_usuario_expedidor)
+                                                 self.numc_usuario_expedidor)
                                     mensaje = "Algo salio mal al realizar tu Traslado :("
 
                         else:
@@ -75,7 +76,7 @@ class traslado:
                             self.fecha_inicio_traslado = output[3]
                             mensaje = "Usted tiene un traslado pendiente - %s" % self.id_traslado
                             logging.warning("Usuario %s tiene un traslado pendiente %s" % (
-                            self.numc_usuario_expedidor, self.id_traslado))
+                                self.numc_usuario_expedidor, self.id_traslado))
 
                     else:
                         logging.warning(
@@ -108,14 +109,15 @@ class traslado:
                 us.cargar_datos()
                 us2.cargar_datos()
 
-
                 logging.info("Actualizando Traslado %s" % self.id_traslado)
-                rowcount = con.execute("UPDATE Traslados SET estado_traslado = %s, fecha_fin_traslado = %s WHERE id_traslado = %s",
-                                       [estado_traslado, time.strftime('%Y-%m-%d %H:%M:%S') ,self.id_traslado], True).rowcount
+                rowcount = con.execute(
+                    "UPDATE Traslados SET estado_traslado = %s, fecha_fin_traslado = %s WHERE id_traslado = %s",
+                    [estado_traslado, time.strftime('%Y-%m-%d %H:%M:%S'), self.id_traslado], True).rowcount
                 if rowcount == 1:
                     if estado_traslado == 'A':
 
-                        logging.info("Cambiando los saldos de los usuario despues del Traslado %s Aceptado" % self.id_traslado)
+                        logging.info(
+                            "Cambiando los saldos de los usuario despues del Traslado %s Aceptado" % self.id_traslado)
 
                         monto = output[3]
                         saldo_disp_us1 = us.saldo - monto
@@ -138,7 +140,8 @@ class traslado:
             con.close_connection()
         else:
             logging.warning("Estado de traslado Incorrecto")
-        return  (retorno, mensaje)
+        return (retorno, mensaje)
+
 
 if __name__ == '__main__':
     tra = traslado(numc_usuario_expedidor=111111, numc_usuario_receptor=111112, monto_traslado=100)

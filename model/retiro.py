@@ -1,9 +1,8 @@
-import time
 import logging
-import os
-from model.usuario import usuario
-from db.connection import connection
+import time
 
+from db.connection import connection
+from model.usuario import usuario
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -11,19 +10,18 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+
 # Modelo que representa el retiro de la DB
 class retiro:
-
-    def __init__(self, id_retiro : int = 0, numc_usuario : int = '',
-                 monto_retiro : int = 0, fecha_inicio_retiro = time.strftime('%Y-%m-%d %H:%M:%S'), fecha_fin_retiro = None, estado_retiro : str = ''):
+    def __init__(self, id_retiro: int = 0, numc_usuario: int = '',
+                 monto_retiro: int = 0, fecha_inicio_retiro=time.strftime('%Y-%m-%d %H:%M:%S'), fecha_fin_retiro=None,
+                 estado_retiro: str = ''):
         self.id_retiro = id_retiro
         self.numc_usuario = numc_usuario
         self.monto_retiro = monto_retiro if monto_retiro > 0 else - (monto_retiro)
         self.fecha_inicio_retiro = fecha_inicio_retiro
         self.fecha_fin_retiro = fecha_fin_retiro
         self.estado_retiro = estado_retiro
-
-
 
     def realizar_retiro(self):
         retorno = False
@@ -48,7 +46,7 @@ class retiro:
                         rowcount = con.execute(
                             "INSERT INTO Retiros(numc_usuario,monto_retiro, fecha_inicio_retiro)"
                             "VALUES (%s, %s, %s)",
-                            [self.numc_usuario,self.monto_retiro,
+                            [self.numc_usuario, self.monto_retiro,
                              self.fecha_inicio_retiro],
                             True).rowcount
                         if rowcount > 0:
@@ -78,7 +76,7 @@ class retiro:
 
             else:
                 mensaje = "Usuario no registrado"
-                logging.error("Usuario no regirstrado %s" % self.numc_usuario )
+                logging.error("Usuario no regirstrado %s" % self.numc_usuario)
 
 
         else:
@@ -93,21 +91,23 @@ class retiro:
         if estado_retiro in ('A', 'C'):
 
             con = connection()
-            output = con.execute("SELECT id_retiro,numc_usuario,monto_retiro FROM Retiros WHERE id_retiro = %s", [self.id_retiro]).fetchall()
+            output = con.execute("SELECT id_retiro,numc_usuario,monto_retiro FROM Retiros WHERE id_retiro = %s",
+                                 [self.id_retiro]).fetchall()
             if len(output) == 1:
                 output = output[0]
                 us = usuario(output[1])
                 us.cargar_datos()
 
-
                 logging.info("Actualizando Retiro %s" % self.id_retiro)
-                rowcount = con.execute("UPDATE Retiros SET estado_retiro = %s, fecha_fin_retiro = %s WHERE id_retiro = %s",
-                                       [estado_retiro, time.strftime('%Y-%m-%d %H:%M:%S') ,self.id_retiro], True).rowcount
+                rowcount = con.execute(
+                    "UPDATE Retiros SET estado_retiro = %s, fecha_fin_retiro = %s WHERE id_retiro = %s",
+                    [estado_retiro, time.strftime('%Y-%m-%d %H:%M:%S'), self.id_retiro], True).rowcount
                 # Si es igual a 1 es porque se pudo realizar la actualizacion
                 if rowcount == 1:
                     if estado_retiro == 'A':
 
-                        logging.info("cambiando los saldos de los usuario despues del Retiro %s Aceptado" % self.id_retiro)
+                        logging.info(
+                            "cambiando los saldos de los usuario despues del Retiro %s Aceptado" % self.id_retiro)
 
                         monto = output[2]
                         saldo_disp_us1 = us.saldo - monto
@@ -126,7 +126,7 @@ class retiro:
             con.close_connection()
         else:
             logging.warning("Estado de Retiro Incorrecto")
-        return  (retorno, mensaje)
+        return (retorno, mensaje)
 
 
 if __name__ == '__main__':

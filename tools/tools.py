@@ -58,5 +58,6 @@ def send_email(correo_from_send: str, password: str, correo_to_send: str, asunto
 
     return status
 
+
 def createPDF(strHTML, ruta_namePDF):
     HTML(string=strHTML).write_pdf(ruta_namePDF)
